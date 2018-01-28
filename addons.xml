@@ -1,89 +1,132 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.program.kamuiwizard" name="Kamui Wizard" version="1.5" provider-name="Obito">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="startup.py" start="startup" />
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Kamui Wizard</summary>
-    <description lang="en">Kamui Wizard allows you to get access to the latest Kamui Custom Builds</description>
-    <platform>all</platform>
-  </extension>
+<addon id='plugin.video.twitch' version='2.1.1' name='Twitch' provider-name='A Talented Community'>
+    <requires>
+        <import addon='xbmc.python' version='2.20.0'/>
+        <import addon="script.module.python.twitch" version="2.0.0"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension point='xbmc.python.pluginsource' library='resources/lib/routes.py'>
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point='xbmc.addon.metadata'>
+        <platform>all</platform>
+        <news>
+2.1.2
+[fix] VodCast highlighting
+2.1.1
+[fix] video default qualities
+[fix] setContentLookup AttributeError
+2.1.0
+[chg] string paths
+[fix] required changes for script.module.python.twitch v2.0.0 refactor
+[fix] multiple reconnections to same stream
+[upd] don't show watched marks for streams
+[upd] leave api logging to script.module.python.twitch
+[add] channel_name to play route, can use channel_id or channel_name
+[add] inputstream.adaptive support for inputstream.adaptive versions >= 2.0.10
+[add] Revoke token
+[add] Update token route
+[add] Reset cache on Refresh to Settings -> Cache
+[add] notify at start and group notifications at start to live notification settings
+[add] logo and game to live notifications
+[add] Hebrew strings [Eng2Heb]
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+        <language></language>
+        <source>https://github.com/MrSprigster/Twitch-on-Kodi</source>
+        <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=134538</forum>
+        <summary lang='da_dk'>Twitch video plugin</summary>
+        <description lang='da_dk'>Se dine favorit gaming streams!</description>
+        <summary lang='de_de'>Twitch video plugin</summary>
+        <description lang='de_de'>Schaue die besten Gaming-Streams!</description>
+        <summary lang='en_gb'>Twitch video plugin</summary>
+        <description lang='en_gb'>Watch your favorite gaming streams!</description>
+        <summary lang='es_es'>Twitch video plugin</summary>
+        <description lang='es_es'>¡Mira los streams de tus juegos favoritos!</description>
+        <summary lang='fr_fr'>Twitch video plugin</summary>
+        <description lang='fr_fr'>Regardez les streams de vos jeux favoris !</description>
+        <summary lang='nl_nl'>Twitch video plugin</summary>
+        <description lang='nl_nl'>Bekijk je favoriete gaming-streams!</description>
+        <summary lang='nb_no'>Tillegg for Twitch</summary>
+        <description lang='nb_no'>Se dine favorittstrømmere!</description>
+        <summary lang='pl_pl'>Twitch video plugin</summary>
+        <description lang='pl_pl'>Oglądaj ulubione programy TwitchTV!</description>
+    </extension>
 </addon>
 
-<addon id="plugin.video.MoneySports"
-       name="MoneySports"
-       version="4.0.3"
-       provider-name="SOME FINE FELLOW">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" />
-    <import addon="script.module.urlresolver" optional="true"/>
-    <import addon="script.module.simplejson" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary></summary>
-    <description>
-
-    </description>
-    <platform>all</platform>
-  </extension>
+<addon id="plugin.video.youtube" name="YouTube" version="5.5.0" provider-name="bromix">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/startup.py" start="startup"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.addon.metadata">
+        <news>
+[fix] context menu after playback
+[fix] alternative player, do not append headers
+[fix/upd] set title from metadata on play
+[upd] Dutch strings [MB1968]
+[upd] French strings [bubuleur]
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <summary lang="en_gb">Plugin for YouTube</summary>
+        <description lang="en_gb">YouTube is one of the biggest video-sharing websites of the world.</description>
+        <summary lang="he_il">תוסף עבור YouTube</summary>
+        <description lang="he_il">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+        <summary lang="de_de">Plugin für YouTube</summary>
+        <description lang="de_de">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+        <summary lang="pl_pl">Wtyczka YouTube</summary>
+        <description lang="pl_pl">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+        <summary lang="hu_hu">YouTube kiegészítő</summary>
+        <description lang="hu_hu">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <summary lang="es_es">Plugin para YouTube</summary>
+        <description lang="es_es">YouTube es uno de los mayores sitios web de intercambio de vídeos del mundo.</description>
+        <summary lang="ru_ru">Видеодополнение YouTube</summary>
+        <description lang="ru_ru">Данное дополнение позволяет находить и смотреть видео на всеми любимом сайте.</description>
+        <summary lang="fr_fr">Plugin pour YouTube</summary>
+        <description lang="fr_fr">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <summary lang="zh_cn">YouTube附加元件</summary>
+        <description lang="zh_cn">「Youtube」是全世界最大的影片分享網站</description>
+        <summary lang="bg_bg">Добавка за YouTube</summary>
+        <description lang="bg_bg">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+        <summary lang="el_gr">Πρόσθετο YouTube</summary>
+        <description lang="el_gr">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+        <summary lang="nb_no">Tillegg for YouTube</summary>
+        <description lang="nb_no">YouTube er en av verdens største nettsider for videodeling.</description>
+        <disclaimer lang="en_gb"></disclaimer>
+        <language></language>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <forum>https://forum.kodi.tv/showthread.php?tid=325740</forum>
+        <website>https://www.youtube.com</website>
+        <email>ytplugin at datanet dot ws</email>
+        <source>https://github.com/jdf76/plugin.video.youtube</source>
+        <size>1775888</size>
+    </extension>
 </addon>
 
-<addon id="repository.communityrepo" name="[COLOR orange][B]The Community Repository[/B][/COLOR]" version="9.4" provider-name="The @CommunityRepo Team">
-	<extension point="xbmc.addon.repository" name="The Community Repository">
-	<dir>
-		<info compressed="false">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml</info>
-		<checksum>https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/zips/</datadir>
-	</dir>
-		<info compressed="false">http://thecommunityrepo.netai.net/RepoPlugins/addons.xml</info>
-		<checksum>http://thecommunityrepo.netai.net/RepoPlugins/addons.xml.md5</checksum>
-		<datadir zip="true">http://thecommunityrepo.netai.net/RepoPlugins/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>@communityrepo Repository</summary>
-		<description>" "The Community Repository" addon, skin and wizard host, contact for details on how to add your content @communityrepo</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="repository.monkey" name="Monkey Repository" version="1.0" provider-name="Monkey">
-	<extension point="xbmc.addon.repository" name="Kodi Help Repository">
-		<info compressed="false">http://wizardmonkey.co.uk/monkey/files/addons.xml</info>
-		<checksum>http://wizardmonkey.co.uk/monkey/files/addons.xml.md5</checksum>
-		<datadir zip="true">http://wizardmonkey.co.uk/monkey/files/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary></summary>
-		<description></description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="repository.myst1cal" name="[COLOR red]Myst1caL[/COLOR][COLOR white] Repo[/COLOR]" version="2.0.4" provider-name="myst1cal">
-    <extension point="xbmc.addon.repository" name="Myst1caL Repository">
-        <info compressed="false">https://raw.githubusercontent.com/myst1calkodi/repo/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/myst1calkodi/repo/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://github.com/myst1calkodi/repo/raw/master/</datadir>
+<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.1" provider-name="Obito">
+    <extension point="xbmc.addon.repository" name="Kamui Repository">
+        <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://github.com/ObitoKodi/kamuirepo/raw/master/</datadir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>www.myst1cal.co.uk Kodi Pack Repo</summary>
-        <description>Myst1cal Kodi Pack Repo</description>
+        <summary>http://kamui.online/ This is Hell</summary>
+        <description>Kamui Pack Repo</description>
         <platform>all</platform>
     </extension>
 </addon>
