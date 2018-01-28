@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.program.kamuiwizard" name="Kamui Wizard" version="1.5" provider-name="Obito">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Kamui Wizard</summary>
+    <description lang="en">Kamui Wizard allows you to get access to the latest Kamui Custom Builds</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.MoneySports"
+       name="MoneySports"
+       version="4.0.3"
+       provider-name="SOME FINE FELLOW">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary></summary>
+    <description>
+
+    </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="repository.communityrepo" name="[COLOR orange][B]The Community Repository[/B][/COLOR]" version="9.4" provider-name="The @CommunityRepo Team">
+	<extension point="xbmc.addon.repository" name="The Community Repository">
+	<dir>
+		<info compressed="false">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml</info>
+		<checksum>https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/zips/</datadir>
+	</dir>
+		<info compressed="false">http://thecommunityrepo.netai.net/RepoPlugins/addons.xml</info>
+		<checksum>http://thecommunityrepo.netai.net/RepoPlugins/addons.xml.md5</checksum>
+		<datadir zip="true">http://thecommunityrepo.netai.net/RepoPlugins/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>@communityrepo Repository</summary>
+		<description>" "The Community Repository" addon, skin and wizard host, contact for details on how to add your content @communityrepo</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.monkey" name="Monkey Repository" version="1.0" provider-name="Monkey">
+	<extension point="xbmc.addon.repository" name="Kodi Help Repository">
+		<info compressed="false">http://wizardmonkey.co.uk/monkey/files/addons.xml</info>
+		<checksum>http://wizardmonkey.co.uk/monkey/files/addons.xml.md5</checksum>
+		<datadir zip="true">http://wizardmonkey.co.uk/monkey/files/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary></summary>
+		<description></description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.myst1cal" name="[COLOR red]Myst1caL[/COLOR][COLOR white] Repo[/COLOR]" version="2.0.4" provider-name="myst1cal">
+    <extension point="xbmc.addon.repository" name="Myst1caL Repository">
+        <info compressed="false">https://raw.githubusercontent.com/myst1calkodi/repo/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/myst1calkodi/repo/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://github.com/myst1calkodi/repo/raw/master/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>www.myst1cal.co.uk Kodi Pack Repo</summary>
+        <description>Myst1cal Kodi Pack Repo</description>
+        <platform>all</platform>
+    </extension>
+</addon>
+</addons>
