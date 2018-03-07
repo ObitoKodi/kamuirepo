@@ -116,6 +116,38 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.youtube.lbb" name="Little Baby Bum" version="1.0.1" provider-name="Obito">
+	<requires>
+		<import addon="plugin.video.youtube" version="4.0" optional="false"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension  point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Little Baby Bum</summary>
+		<description lang="en">The best nursery rhyme videos for children on YouTube</description>
+		<disclaimer>Mein Sweg</disclaimer>
+		<language>en</language>
+	</extension>
+</addon>
+
+<addon id="plugin.video.youtube.monstercat" name="Monstercat" version="1.0.1" provider-name="Obito">
+	<requires>
+		<import addon="plugin.video.youtube" version="4.0" optional="false"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>video</provides>
+	</extension>
+	<extension  point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Monstercat</summary>
+		<description lang="en">Monstercat is a new-age Record Label. It is the convergence of an independent label, tech startup and media company. We empower creative people, musicians, artists, developers, entrepreneurs, and influencers young and old. We looked at the problems within the music industry, asked “why not” and have created the “how to”</description>
+		<disclaimer>Mein Sweg</disclaimer>
+		<language>en</language>
+	</extension>
+</addon>
+
 <addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.1" provider-name="Obito">
     <extension point="xbmc.addon.repository" name="Kamui Repository">
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml</info>
