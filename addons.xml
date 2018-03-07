@@ -128,4 +128,23 @@
         <platform>all</platform>
     </extension>
 </addon>
+
+<addon id="script.module.netstreams.iptv" name="[B][COLOR white]Net[/COLOR][/B][B][COLOR blueviolet]Streams[/COLOR][B] [B][COLOR white]IPTV[/COLOR][/B]" version="1.0" provider-name="@KodinityTV/RACC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.livestreamer" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.routing" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>all</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">[B][COLOR white]Net[/COLOR][COLOR blueviolet]Streams[/COLOR] [COLOR white]IPTV[/COLOR]</summary>
+    <description lang="en">NetStreams IPTV</description>
+    <disclaimer lang="en">The author does not host or own any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+    <language></language>
+    <platform>all</platform>
+  </extension>
+</addon>
 </addons>
