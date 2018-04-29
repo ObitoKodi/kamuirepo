@@ -153,7 +153,7 @@
 	</extension>
 </addon>
 
-<addon id="plugin.video.youtube.markwiens" name="Mark Wiens Food" version="1.0.1" provider-name="Obito">
+<addon id="plugin.video.youtube.markwiens" name="Mark Wiens Food" version="1.0.2" provider-name="Obito">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.addon.common" version="2.0.0"/>
