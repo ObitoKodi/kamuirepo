@@ -116,6 +116,54 @@
   </extension>
 </addon>
 
+<addon id='plugin.video.twitch' version='2.2.1' name='Twitch' provider-name='A Talented Community'>
+    <requires>
+        <import addon='xbmc.python' version='2.20.0'/>
+        <import addon="script.module.python.twitch" version="2.0.0"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension point='xbmc.python.pluginsource' library='resources/lib/routes.py'>
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point='xbmc.addon.metadata'>
+        <platform>all</platform>
+        <news>
+2.2.1
+[add] allow Adaptive as default quality
+
+2.2.0
+[add] Search history
+[add] Settings - Maintenance
+[fix] VodCast highlighting
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.png</fanart>
+        </assets>
+        <language></language>
+        <source>https://github.com/MrSprigster/Twitch-on-Kodi</source>
+        <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=134538</forum>
+        <summary lang='da_dk'>Twitch video plugin</summary>
+        <description lang='da_dk'>Se dine favorit gaming streams!</description>
+        <summary lang='de_de'>Twitch video plugin</summary>
+        <description lang='de_de'>Schaue die besten Gaming-Streams!</description>
+        <summary lang='en_gb'>Twitch video plugin</summary>
+        <description lang='en_gb'>Watch your favorite gaming streams!</description>
+        <summary lang='es_es'>Twitch video plugin</summary>
+        <description lang='es_es'>¡Mira los streams de tus juegos favoritos!</description>
+        <summary lang='fr_fr'>Twitch video plugin</summary>
+        <description lang='fr_fr'>Regardez les streams de vos jeux favoris !</description>
+        <summary lang='nl_nl'>Twitch video plugin</summary>
+        <description lang='nl_nl'>Bekijk je favoriete gaming-streams!</description>
+        <summary lang='nb_no'>Tillegg for Twitch</summary>
+        <description lang='nb_no'>Se dine favorittstrømmere!</description>
+        <summary lang='pl_pl'>Twitch video plugin</summary>
+        <description lang='pl_pl'>Oglądaj ulubione programy TwitchTV!</description>
+    </extension>
+</addon>
+
 
 <addon id="plugin.video.wwe-on-demand" name="Wrestling On Demand" version="5.07" provider-name="The Boogeyman">
   <requires>
@@ -135,6 +183,100 @@
     <description lang="en">The Home Of Wrestling On Demand | Addon Steam Content From NET, A huge thank you to those who use this addon</description>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="plugin.video.youtube" name="YouTube" version="6.0.0~beta10" provider-name="bromix">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0"/>
+        <import addon="script.module.six"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/startup.py" start="login"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.addon.metadata">
+        <news>
+[add] Python 3 compat.
+[add] Settings -&#62; Maintenance -&#62; Delete temporary files
+[add] Settings -&#62; General -&#62; Rate video after watching
+[add] Settings -&#62; API -&#62; Enable API configuration page
+        - when enabled, visit http:&#47;&#47;&#60;ipaddress&#62;:&#60;port&#62;&#47;api to configure API keys from a web browser
+        - port is configured in Settings - HTTP Server - Port
+[chg] Storing personal api keys in api_keys.json
+[chg] Storing login tokens in access_manager.json
+[add] youtube_registration module, register developer keys and use them by appending an addon_id=&#60;addon_id&#62; parameter to youtube add-on plugin urls
+[add] screensaver=true parameter to &#47;play route - no suggested videos, no post play events, don't ask for quality
+[add] play route for channel live streams
+        - plugin:&#47;&#47;plugin.video.youtube&#47;play&#47;?channel_id=UCLA_DiR1FfKNvjuUpBHmylQ&#38;live=1
+[add] Purchases
+        - requires Kodi 18
+        - requires inputstream.adaptive &#62;= 2.2.12
+        - if a purchase fails after 10 seconds
+            - provide a debug log
+            - set InputStream Adaptive -&#62; Settings -&#62; Stream selection -&#62; manual
+            - change video stream during playback to preferred working resolution
+        - huge thanks to peak3d
+[add] relevanceLanguage to search requests
+[fix] mpeg-dash proxy with multi-profiles
+[fix] search input, now works with Yatse
+[fix] Signature deciphering
+[fix] context menu after playback
+[fix] alternative player, do not append headers
+[fix] My Subscriptions (Filtered) channel matching
+[fix] Audio only, failover to video if no audio only streams available
+[fix] My Subscriptions missing page 3
+[fix&#47;upd] function cache, update max rows and resolve hang on some requests
+[fix&#47;upd] post play events happen post play
+[fix&#47;upd] set title from metadata on play
+[chg] only automatically remove temp folder at start-up
+[upd] Dutch strings [MB1968]
+[upd] French strings [bubuleur]
+[upd] Greek strings [twilight0]
+[upd] Spanish strings [roliverosc]
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <summary lang="en_gb">Plugin for YouTube</summary>
+        <description lang="en_gb">YouTube is one of the biggest video-sharing websites of the world.</description>
+        <disclaimer lang="en_gb">This plugin is not endorsed by Google</disclaimer>
+        <summary lang="he_il">תוסף עבור YouTube</summary>
+        <description lang="he_il">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+        <summary lang="de_de">Plugin für YouTube</summary>
+        <description lang="de_de">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+        <summary lang="pl_pl">Wtyczka YouTube</summary>
+        <description lang="pl_pl">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+        <summary lang="hu_hu">YouTube kiegészítő</summary>
+        <description lang="hu_hu">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <summary lang="es_es">Plugin para YouTube</summary>
+        <description lang="es_es">YouTube es uno de los mayores sitios web de intercambio de vídeos del mundo.</description>
+        <disclaimer lang="es_es">Este add-on no esta respaldado por Google</disclaimer>
+        <summary lang="ru_ru">Видеодополнение YouTube</summary>
+        <description lang="ru_ru">Данное дополнение позволяет находить и смотреть видео на всеми любимом сайте.</description>
+        <summary lang="fr_fr">Plugin pour YouTube</summary>
+        <description lang="fr_fr">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <summary lang="zh_cn">YouTube附加元件</summary>
+        <description lang="zh_cn">「Youtube」是全世界最大的影片分享網站</description>
+        <summary lang="bg_bg">Добавка за YouTube</summary>
+        <description lang="bg_bg">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+        <summary lang="el_gr">Πρόσθετο YouTube</summary>
+        <description lang="el_gr">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+        <disclaimer lang="el_gr">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
+        <summary lang="nb_no">Tillegg for YouTube</summary>
+        <description lang="nb_no">YouTube er en av verdens største nettsider for videodeling.</description>
+        <language></language>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <forum>https://forum.kodi.tv/showthread.php?tid=325740</forum>
+        <website>https://www.youtube.com</website>
+        <email>ytplugin at datanet dot ws</email>
+        <source>https://github.com/jdf76/plugin.video.youtube</source>
+        <size>1776578</size>
+    </extension>
 </addon>
 
 <addon id="plugin.video.youtube.lbb" name="Little Baby Bum" version="1.0.1" provider-name="Obito">
@@ -414,6 +556,35 @@
     <language></language>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.0" provider-name="A Talented Community">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0"/>
+        <import addon="script.module.six" version="1.9.0"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension point="xbmc.python.module" library="resources/lib"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <news>
+[chg] refactor oauth for inclusion of helix
+[add] helix api
+[add] add usher.live_request and usher.video_request
+[add] MobileClient().revoke_token and MobileClient().get_app_access_token queries
+[add] Kodi logging
+[add] v5 users.users
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <platform>all</platform>
+        <summary lang="en">Module for interaction with the Twitch.tv API</summary>
+        <description lang="en">python-twitch for Kodi is module for interaction with the Twitch.tv API based on python-twitch by ingwinlu.</description>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <forum> </forum>
+        <source>https://github.com/MrSprigster/script.module.python.twitch</source>
+    </extension>
 </addon>
 
 <addon id="script.module.requests"
