@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.program.kamuitools" name="Kamui Tools" version="1.1" provider-name="Obito">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.universalscrapers" version="0.5.5" />
+        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
+        <import addon="script.module.beautifulsoup" version="3.2.1" />
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.addon.common" version="2.0.0" />
+        <import addon="script.module.xmltodict" version="0.9.0" />
+        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
+        <import addon="script.module.resolveurl" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Kamui Tools</summary>
+        <description lang="en">Part of Kamui</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+        <platform>all</platform>
+        <website></website>
+        <video_guide></video_guide>
+    </extension>
+</addon>
+
+    <addon id="plugin.program.kamuiunblock" name="Kamui Unblocker" version="1.1.2" provider-name="Obito">
+        <requires>
+            <import addon="xbmc.python" version="2.1.0" />
+            <import addon="script.module.requests" version="1.1.0" />
+            <import addon="script.module.addon.common" />
+        </requires>
+        <extension point="xbmc.python.pluginsource" library="default.py">
+           <provides>executable</provides>
+        </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Kamui Unblocker</summary>
+    <description lang="en">Easy to use URL Unblocker</description>
+    <platform>all</platform>
+  </extension>
+    </addon>
+
 <addon id="plugin.program.kamuiwizard" name="Kamui Wizard" version="2.2.6" provider-name="Obito">
 <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -44,22 +86,6 @@
   </extension>
 </addon>
 
-    <addon id="plugin.video.kamuiunblock" name="Kamui Unblocker" version="1.1.1" provider-name="Obito">
-        <requires>
-            <import addon="xbmc.python" version="2.1.0" />
-            <import addon="script.module.requests" version="1.1.0" />
-            <import addon="script.module.addon.common" />
-        </requires>
-        <extension point="xbmc.python.pluginsource" library="default.py">
-            <provides>video executable</provides>
-        </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Kamui Unblocker</summary>
-    <description lang="en">Easy to use URL Unblocker</description>
-    <platform>all</platform>
-  </extension>
-    </addon>
-
 <addon id="plugin.video.NetStreams" name="[B][COLOR white]Net[/COLOR][/B][B][COLOR blueviolet]Streams[/COLOR][B] [B][COLOR white]AIO[/COLOR][/B]" version="3.9.1" provider-name="@KodinityTV">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
@@ -83,37 +109,6 @@
       <disclaimer lang="en">The author does not host or own any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
       <platform>all</platform>
     </extension>
-</addon>
-
-<addon id="plugin.video.ProjectMayhem"
-       name="Project Mayhem"
-       version="1.8"
-       provider-name="Maverick">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.t0mm0.common" version="2.0.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" version="3.0.0"/>
-    <import addon="script.module.urlresolver" />
-    <import addon="script.module.simplejson" />
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Sports Addon By Maverick</summary>
-    <description lang="en">Sports Addon By Maverick</description>
-    <platform>all</platform>
-  </extension>
 </addon>
 
 <addon id='plugin.video.twitch' version='2.2.1' name='Twitch' provider-name='A Talented Community'>
@@ -676,6 +671,24 @@
 		<forum>https://www.tvaddons.co/forums</forum>
         <website>https://www.tvaddons.co</website>
 	</extension>
+</addon>
+
+<addon id="script.retrosmc" name="RetrOSMC" version="0.0.2" provider-name="mcobit">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="retrosmc.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <language/>
+        <platform>linux</platform>
+        <disclaimer>For Kodi linux (tested on OSMC final)</disclaimer>
+        <summary lang="en">Launch RetroPie from Kodi.</summary>
+        <description lang="en">Launch RetroPie from Kodi.</description>
+        <website>https://github.com/mcobit/retrosmc/</website>
+        <email></email>
+    </extension>
 </addon>
 
 <addon id="service.system.acestreammedia"
