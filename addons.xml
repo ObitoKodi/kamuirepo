@@ -86,6 +86,33 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.kamui" version="1.0.1" name="Kamui" provider-name="Obito">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+		<import addon="script.kamui.artwork" version="1.0.5" />
+		<import addon="script.kamui.metadata" version="1.0.0" />
+		<import addon="script.module.urlresolver" version="3.0.33" />
+		<import addon="script.module.metahandler" version="2.9.0" />
+		<import addon="script.module.requests"/>
+		<import addon="script.module.beautifulsoup"/>
+		<import addon="script.module.futures"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="kamui.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Thank You For Installing Kamui, Remember This Addon Scrapes Nothing Is Hosted, With That Said This Will Be A Fun Journey So Join Us As We Make This Your New Loved Addon</summary>
+		<description lang="en">[COLOR red][B]Welcome To Kamui[/B][/COLOR] [CR]Watch movies and TV shows in high quality! [CR]Please note that this addon is not an official part of the Kodi media player</description>
+		<disclaimer lang="en">[COLOR yellow]The author does not host any content, nor is he affiliated with any of the content providers.[/COLOR]</disclaimer>
+		<platform>all</platform>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<news>Kamui, Is A Fork Of A Long Lived Addon [CR]Also Credit To Lambda/Viper For Exodus [CR]</news>
+	</extension>
+</addon>
+
 <addon id="plugin.video.NetStreams" name="[B][COLOR white]Net[/COLOR][/B][B][COLOR blueviolet]Streams[/COLOR][B] [B][COLOR white]AIO[/COLOR][/B]" version="3.9.1" provider-name="@KodinityTV">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
@@ -363,6 +390,30 @@
     <summary lang="en">Common caching api for xbmc plugins.</summary>
   </extension>
   <extension library="lib" point="xbmc.python.module" />
+</addon>
+
+<addon id="script.kamui.artwork" version="2.0.0" name="Kamui Artwork" provider-name="Obito">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Themes for the Kamui Addon</summary>
+		<description>Themes for Kamui are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="script.kamui.metadata" version="2.0.0" name="Kamui Metadata" provider-name="Obito">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Metadata for the Kamui Addon</summary>
+		<description>Metadata for Kamui are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
+	</extension>
 </addon>
 
 <addon id="script.module.addon.common"
