@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.program.kamuitools" name="Kamui Tools" version="1.3" provider-name="Obito">
+<addon id="plugin.program.kamuitools" name="Kamui Tools" version="1.4" provider-name="Obito">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="0.5.5" />
@@ -365,7 +365,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	<extension point="xbmc.addon.repository" name="Lambdascrapers Repo">
 		<info compressed="false">https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips</datadir>
+		<datadir zip="true">https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Lambdascrapers</summary>
