@@ -859,7 +859,7 @@ WebUI: http://ip_box:6878/webui/app/WEBUITOKEN/server
   </extension>
 </addon>
 
-<addon id="skin.estuary.kamui" version="1.0.6" name="Estuary Kamui" provider-name="phil65, Ichabod Fletchman, Obito">
+<addon id="skin.estuary.kamui" version="1.0.7" name="Estuary Kamui" provider-name="phil65, Ichabod Fletchman, Obito">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="plugin.program.kamuiwidgets" />
