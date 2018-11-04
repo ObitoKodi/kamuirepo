@@ -88,6 +88,33 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.iplayerwww" name="iPlayer WWW" version="3.0.36" provider-name="CaptainT, Cas, ihurst, primaeval">
+  <requires>
+    <import addon="xbmc.python" version="2.25.0"/>
+    <import addon="script.module.requests" version="2.7.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">TV and Radio from BBC iPlayer</summary>
+    <description lang="en">This add-on enables playing of Live and Catchup TV (UK only) and Radio content (UK or international) from the BBC iPlayer website. It is not created, maintained or in any way affiliated with the BBC. The add-on only provides an interface to access the BBC iPlayer website from Kodi.</description>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <forum>http://forum.kodi.tv/showthread.php?tid=239378</forum>
+    <source>https://github.com/vonH/plugin.video.iplayerwww</source>
+    <disclaimer lang="en">This add-on is a front end to the BBC iPlayer website. It is not an official BBC product. A UK TV Licence is required to watch the live, catch-up, or on-demand TV content.</disclaimer>
+    <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+    </assets>
+    <news>
+v3.0.36
+Adapted to new JSON structure.
+   </news>
+  </extension>
+</addon>
+
 <addon id="plugin.video.kamui" version="1.0.5" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
@@ -151,51 +178,53 @@ This is a Non-profit resource, organized solely for educational purposes which i
     </extension>
 </addon>
 
-<addon id='plugin.video.twitch' version='2.2.1' name='Twitch' provider-name='A Talented Community'>
+<addon id='plugin.video.twitch' version='2.3.4' name='Twitch' provider-name='A Talented Community'>
     <requires>
         <import addon='xbmc.python' version='2.20.0'/>
-        <import addon="script.module.python.twitch" version="2.0.0"/>
-        <import addon="script.module.requests" version="2.9.1"/>
+        <import addon='script.module.six' version='1.11.0'/>
+        <import addon='script.module.python.twitch' version='2.0.2'/>
+        <import addon='script.module.requests' version='2.9.1'/>
     </requires>
-    <extension point='xbmc.python.pluginsource' library='resources/lib/routes.py'>
+    <extension point='xbmc.python.pluginsource' library='resources/lib/addon_runner.py'>
         <provides>video</provides>
     </extension>
-    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point='xbmc.service' library='resources/lib/service_runner.py' start='login'/>
     <extension point='xbmc.addon.metadata'>
         <platform>all</platform>
         <news>
-2.2.1
-[add] allow Adaptive as default quality
+2.3.4
+[fix] clean_title_value UnicodeDecodeError
+[fix] Game titles UnicodeEncodeError
+[fix] python 3 compat. urllib.quote_plus
 
-2.2.0
-[add] Search history
-[add] Settings - Maintenance
-[fix] VodCast highlighting
+2.3.3
+[fix] Description template UnicodeDecodeError
+[chg] Use unicode punctuation space in description template
         </news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.png</fanart>
         </assets>
-        <language></language>
         <source>https://github.com/MrSprigster/Twitch-on-Kodi</source>
         <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</license>
         <forum>http://forum.kodi.tv/showthread.php?tid=134538</forum>
-        <summary lang='da_dk'>Twitch video plugin</summary>
-        <description lang='da_dk'>Se dine favorit gaming streams!</description>
-        <summary lang='de_de'>Twitch video plugin</summary>
-        <description lang='de_de'>Schaue die besten Gaming-Streams!</description>
-        <summary lang='en_gb'>Twitch video plugin</summary>
-        <description lang='en_gb'>Watch your favorite gaming streams!</description>
-        <summary lang='es_es'>Twitch video plugin</summary>
-        <description lang='es_es'>¡Mira los streams de tus juegos favoritos!</description>
-        <summary lang='fr_fr'>Twitch video plugin</summary>
-        <description lang='fr_fr'>Regardez les streams de vos jeux favoris !</description>
-        <summary lang='nl_nl'>Twitch video plugin</summary>
-        <description lang='nl_nl'>Bekijk je favoriete gaming-streams!</description>
-        <summary lang='nb_no'>Tillegg for Twitch</summary>
-        <description lang='nb_no'>Se dine favorittstrømmere!</description>
-        <summary lang='pl_pl'>Twitch video plugin</summary>
-        <description lang='pl_pl'>Oglądaj ulubione programy TwitchTV!</description>
+        <summary lang='en_GB'>Twitch video plugin</summary>
+        <description lang='en_GB'>Watch your favorite gaming streams!</description>
+        <summary lang='da_DK'>Twitch video plugin</summary>
+        <description lang='da_DK'>Se dine favorit gaming streams!</description>
+        <summary lang='de_DE'>Twitch video plugin</summary>
+        <description lang='de_DE'>Schaue die besten Gaming-Streams!</description>
+        <summary lang='es_ES'>Twitch video plugin</summary>
+        <description lang='es_ES'>¡Mira los streams de tus juegos favoritos!</description>
+        <summary lang='fr_FR'>Twitch video plugin</summary>
+        <description lang='fr_FR'>Regardez les streams de vos jeux favoris !</description>
+        <summary lang='nl_NL'>Twitch video plugin</summary>
+        <description lang='nl_NL'>Bekijk je favoriete gaming-streams!</description>
+        <summary lang='nb_NO'>Tillegg for Twitch</summary>
+        <description lang='nb_NO'>Se dine favorittstrømmere!</description>
+        <summary lang='pl_PL'>Twitch video plugin</summary>
+        <description lang='pl_PL'>Oglądaj ulubione programy TwitchTV!</description>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
 </addon>
 
@@ -220,10 +249,10 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.0.0~beta10" provider-name="bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.2.0" provider-name="bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
-        <import addon="script.module.six"/>
+        <import addon="script.module.six" version="1.11.0"/>
         <import addon="script.module.requests" version="2.12.4"/>
         <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
     </requires>
@@ -234,83 +263,74 @@ This is a Non-profit resource, organized solely for educational purposes which i
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[add] Python 3 compat.
-[add] Settings -&#62; Maintenance -&#62; Delete temporary files
-[add] Settings -&#62; General -&#62; Rate video after watching
-[add] Settings -&#62; API -&#62; Enable API configuration page
-        - when enabled, visit http:&#47;&#47;&#60;ipaddress&#62;:&#60;port&#62;&#47;api to configure API keys from a web browser
-        - port is configured in Settings - HTTP Server - Port
-[chg] Storing personal api keys in api_keys.json
-[chg] Storing login tokens in access_manager.json
-[add] youtube_registration module, register developer keys and use them by appending an addon_id=&#60;addon_id&#62; parameter to youtube add-on plugin urls
-[add] screensaver=true parameter to &#47;play route - no suggested videos, no post play events, don't ask for quality
-[add] play route for channel live streams
-        - plugin:&#47;&#47;plugin.video.youtube&#47;play&#47;?channel_id=UCLA_DiR1FfKNvjuUpBHmylQ&#38;live=1
-[add] Purchases
-        - requires Kodi 18
-        - requires inputstream.adaptive &#62;= 2.2.12
-        - if a purchase fails after 10 seconds
-            - provide a debug log
-            - set InputStream Adaptive -&#62; Settings -&#62; Stream selection -&#62; manual
-            - change video stream during playback to preferred working resolution
-        - huge thanks to peak3d
-[add] relevanceLanguage to search requests
-[fix] mpeg-dash proxy with multi-profiles
-[fix] search input, now works with Yatse
-[fix] Signature deciphering
-[fix] context menu after playback
-[fix] alternative player, do not append headers
-[fix] My Subscriptions (Filtered) channel matching
-[fix] Audio only, failover to video if no audio only streams available
-[fix] My Subscriptions missing page 3
-[fix&#47;upd] function cache, update max rows and resolve hang on some requests
-[fix&#47;upd] post play events happen post play
-[fix&#47;upd] set title from metadata on play
-[chg] only automatically remove temp folder at start-up
-[upd] Dutch strings [MB1968]
-[upd] French strings [bubuleur]
-[upd] Greek strings [twilight0]
-[upd] Spanish strings [roliverosc]
+6.2.0
+[add] Context menu -&gt; &#39;Play with subtitles&#39; |contrib: solarus|
+[add] Option to download subtitles before playback in Settings -&gt; General -&gt; Configure subtitles
+[add] Refresh context menu to all videos/live streams
+[add] &amp;strm=true parameter for strm files in Kodi 18 |contrib: vlmaksime|
+    - use description from library and set watched status
+[add] &#39;Settings -&gt; Advanced -&gt; Use YouTube website urls&#39; for external/alternative players
+            eg. Player: MPC-BE, URL: https://www.youtube.com/watch?v=C0NyvxTJGcQ
+[fix] Reported background progress dialog percentage
+[fix] Playlist items, use video_items instead of playback_items
+[fix] search history size
+[fix] remove Spanish (Latin America)|es-419 from the setup wizard, causing invalidLanguage and invalidRelevanceLanguage errors
+[upd] Improve speed of playback starting and resolver
+            before: min: 1.5s max: 2.6s median: 1.7s
+            after:  min: 0.9s max: 2.6s median: 1.2s
+[chg] refactor logging and system version
+[chg] Localize confirmation
+[lang] el_gr strings |contrib: twilight0|
+[lang] es_es strings |contrib: roliverosc|
+[lang] es_mx strings |contrib: Intel11|
+[lang] it_it strings |contrib: SebastianoPistore|
+[lang] nl_nl strings |contrib: Markman-B|
+[lang] ru_ru strings |contrib: vlmaksime|
         </news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <summary lang="en_gb">Plugin for YouTube</summary>
-        <description lang="en_gb">YouTube is one of the biggest video-sharing websites of the world.</description>
-        <disclaimer lang="en_gb">This plugin is not endorsed by Google</disclaimer>
-        <summary lang="he_il">תוסף עבור YouTube</summary>
-        <description lang="he_il">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
-        <summary lang="de_de">Plugin für YouTube</summary>
-        <description lang="de_de">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
-        <summary lang="pl_pl">Wtyczka YouTube</summary>
-        <description lang="pl_pl">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
-        <summary lang="hu_hu">YouTube kiegészítő</summary>
-        <description lang="hu_hu">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
-        <summary lang="es_es">Plugin para YouTube</summary>
-        <description lang="es_es">YouTube es uno de los mayores sitios web de intercambio de vídeos del mundo.</description>
-        <disclaimer lang="es_es">Este add-on no esta respaldado por Google</disclaimer>
-        <summary lang="ru_ru">Видеодополнение YouTube</summary>
-        <description lang="ru_ru">Данное дополнение позволяет находить и смотреть видео на всеми любимом сайте.</description>
-        <summary lang="fr_fr">Plugin pour YouTube</summary>
-        <description lang="fr_fr">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
-        <summary lang="zh_cn">YouTube附加元件</summary>
-        <description lang="zh_cn">「Youtube」是全世界最大的影片分享網站</description>
-        <summary lang="bg_bg">Добавка за YouTube</summary>
-        <description lang="bg_bg">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
-        <summary lang="el_gr">Πρόσθετο YouTube</summary>
-        <description lang="el_gr">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
-        <disclaimer lang="el_gr">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
-        <summary lang="nb_no">Tillegg for YouTube</summary>
-        <description lang="nb_no">YouTube er en av verdens største nettsider for videodeling.</description>
-        <language></language>
+        <summary lang="en_GB">Plugin for YouTube</summary>
+        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
+        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
+        <summary lang="he_IL">תוסף עבור YouTube</summary>
+        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+        <summary lang="de_DE">Plugin für YouTube</summary>
+        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+        <summary lang="pl_PL">Wtyczka YouTube</summary>
+        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+        <summary lang="hu_HU">YouTube kiegészítő</summary>
+        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <summary lang="es_ES">Plugin para YouTube</summary>
+        <description lang="es_ES">YouTube es uno de los sitios web para compartir videos más grande del mundo.</description>
+        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
+        <summary lang="es_MX">Plugin para YouTube</summary>
+        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
+        <disclaimer lang="es_MX">Este add-on no está respaldado por Google</disclaimer>
+        <summary lang="ru_RU">Видеодополнение YouTube</summary>
+        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
+        <summary lang="fr_FR">Plugin pour YouTube</summary>
+        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <summary lang="zh_CN">YouTube附加元件</summary>
+        <description lang="zh_CN">「Youtube」是全世界最大的影片分享網站</description>
+        <summary lang="zh_TW">YouTube附加元件</summary>
+        <description lang="zh_TW">「Youtube」是全世界最大的影片分享網站</description>
+        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
+        <summary lang="bg_BG">Добавка за YouTube</summary>
+        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+        <summary lang="el_GR">Πρόσθετο YouTube</summary>
+        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
+        <summary lang="nb_NO">Tillegg for YouTube</summary>
+        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <forum>https://forum.kodi.tv/showthread.php?tid=325740</forum>
         <website>https://www.youtube.com</website>
         <email>ytplugin at datanet dot ws</email>
         <source>https://github.com/jdf76/plugin.video.youtube</source>
-        <size>1776578</size>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
 </addon>
 
@@ -361,6 +381,33 @@ This is a Non-profit resource, organized solely for educational purposes which i
     <description lang="en">Monstercat is a new-age Record Label</description>
     <disclaimer>Mein Sweg</disclaimer>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="program.plexus"
+       name="Plexus"
+       version="0.1.8"
+       provider-name="tvaddons">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary>SopCast and AceStream for Kodi</summary>
+    <description lang="en">Plexus - Any complex structure containing an intricate network of parts. Plexus brings native peer-to-peer support (AceStream and SopCast) for Kodi Entertainment Center for several platforms.[CR][CR]Documentation: (missing)</description>
+    <description lang="pt">Plexus - Uma estrutura complexa constituída por uma rede de partes. O Plexus adiciona suporte peer-to-peer nativo (AceStream e Sopcast) ao Kodi Entertainment Center para várias plataformas.[CR][CR]Documentação: (em falta)</description>
+    <description lang="es">Plexus - Una estructura compleja conteniendo una intrincada red de partes. Plexus añade soporte nativo peer-to-peer (AceStream y SopCast) al Centro de Entretenimiento Kodi para varias plataformas.[CR][CR]Documentacion: (falta)</description>
+	<disclaimer lang="en">The author does not host nor distribute any of the content you may watch using this addon. The author has no part in the development of any included technologies. When seeking help in Kodi's forum please respect rules (http://kodi.wiki/view/Forum_rules).</disclaimer>
+    <disclaimer lang="pt">Os autores não alojam nem distribuem nenhum do conteúdo que poderá ser reproduzido a partir deste addon. Os autores não têm qualquer parte no desenvolvimento de qualquer uma das tecnologias. Se procurar ajuda no fórum oficial do Kodi por favor respeite as regras do fórum (http://kodi.wiki/view/Forum_rules).</disclaimer>
+   	<disclaimer lang="es">El autor no aloja ni distribuye cualquier contenido que ud. pudiera reproducir usando este addon. El autor no tiene participacion en el desarrollo de cualquier tecnologia incluida. Cuando requiera ayuda en el foro de Kodi por favor respete las reglas (http://kodi.wiki/view/Forum_rules).</disclaimer>
+    <platform>all</platform>
+	<forum>https://www.tvaddons.co/forums</forum>
+	<website>https://www.tvaddons.co</website>
   </extension>
 </addon>
 
@@ -506,6 +553,25 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
+<addon id="script.module.beautifulsoup4"
+       name="BeautifulSoup4"
+       version="4.5.3"
+       provider-name="Leonard Richardson (leonardr@segfault.org)">
+  <requires>
+    <import addon="xbmc.python"
+             version="2.25.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary>HTML/XML parser for quick-turnaround applications like screen-scraping</summary>
+    <description>Beautiful Soup parses arbitrarily invalid SGML and provides a variety of methods and Pythonic idioms for iterating and searching the parse tree.</description>
+    <license>BSD</license>
+    <platform>all</platform>
+    <website>http://www.crummy.com/software/BeautifulSoup/</website>
+  </extension>
+</addon>
+
 <addon id="script.module.certifi"
        name="certifi"
        version="2017.07.27.1"
@@ -588,7 +654,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	</extension>
 </addon>
 
-<addon id="script.module.lambdascrapers" name="Lambdascrapers Module" version="1.4.0" provider-name="IAC">
+<addon id="script.module.lambdascrapers" name="Lambdascrapers Module" version="1.6.0" provider-name="I-A-C">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
@@ -597,6 +663,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	<extension point="xbmc.python.pluginsource" library="lib/default.py">
 		<provides>executable</provides>
 	</extension>
+	<!--<!--<extension point="xbmc.service" library="CleanupService.py" start="startup" />-->-->
 		<extension point="xbmc.addon.metadata">
 			<platform>all</platform>
 			<summary lang="en">Lambdascrapers Module</summary>
@@ -668,26 +735,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
     </extension>
 </addon>
 
-<addon id="script.module.netstreams.iptv" name="[B][COLOR white]Net[/COLOR][/B][B][COLOR blueviolet]Streams[/COLOR][B] [B][COLOR white]IPTV[/COLOR][/B]" version="1.0" provider-name="@KodinityTV/RACC">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.livestreamer" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.routing" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="addon.py">
-    <provides>all</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">[B][COLOR white]Net[/COLOR][COLOR blueviolet]Streams[/COLOR] [COLOR white]IPTV[/COLOR]</summary>
-    <description lang="en">NetStreams IPTV</description>
-    <disclaimer lang="en">The author does not host or own any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-    <language></language>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.0" provider-name="A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.4" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.9.0"/>
@@ -697,28 +745,23 @@ This is a Non-profit resource, organized solely for educational purposes which i
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[chg] refactor oauth for inclusion of helix
-[add] helix api
-[add] add usher.live_request and usher.video_request
-[add] MobileClient().revoke_token and MobileClient().get_app_access_token queries
-[add] Kodi logging
-[add] v5 users.users
+[fix] video/live stream token encoding
         </news>
         <assets>
             <icon>icon.png</icon>
         </assets>
         <platform>all</platform>
-        <summary lang="en">Module for interaction with the Twitch.tv API</summary>
-        <description lang="en">python-twitch for Kodi is module for interaction with the Twitch.tv API based on python-twitch by ingwinlu.</description>
+        <summary lang="en_GB">Module for interaction with the Twitch.tv API</summary>
+        <description lang="en_GB">python-twitch for Kodi is module for interaction with the Twitch.tv API based on python-twitch by ingwinlu.</description>
         <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-        <forum> </forum>
         <source>https://github.com/MrSprigster/script.module.python.twitch</source>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
 </addon>
 
 <addon id="script.module.requests"
        name="requests"
-       version="2.18.4"
+       version="2.19.1"
        provider-name="kennethreitz">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
@@ -742,6 +785,26 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.0.17" provider-name="jsergio">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="plugin.video.youtube" optional="true" />
+		<import addon="script.module.python.twitch" optional="true" />
+		<import addon="script.module.cryptopy" version="1.2.6" optional="true" />
+		<import addon="plugin.video.gdrive" optional="true" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.python.pluginsource" library="lib/default.py" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
+		<summary lang="es">Resolver enlaces a videos de sitios populares para poder reproducirlos en XBMC/Kodi.</summary>
+		<summary lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
+		<description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+		<description lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
+	</extension>
+</addon>
+
 <addon id="script.module.simplejson"
        name="simplejson"
        version="3.3.0"
@@ -760,6 +823,26 @@ This is a Non-profit resource, organized solely for educational purposes which i
     <license>MIT License, Academic Free License v. 2.1</license>
     <website>https://pypi.python.org/pypi/simplejson/</website>
     <source>https://pypi.python.org/pypi/simplejson/</source>
+  </extension>
+</addon>
+
+<addon id="script.module.six"
+       name="six"
+       version="1.11.0"
+       provider-name="gutworth">
+  <requires>
+    <import addon="xbmc.python"
+    		version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary>Python 2 and 3 compatibility utilities.</summary>
+    <description>Six is a Python 2 and 3 compatibility library. It provides utility functions for smoothing over the differences between the Python versions with the goal of writing Python code that is compatible on both Python versions. See the documentation for more information on what is provided.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <source>https://pypi.python.org/pypi/six</source>
+    <website>https://pypi.python.org/pypi/six</website>
   </extension>
 </addon>
 
