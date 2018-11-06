@@ -71,7 +71,7 @@
   </extension>
     </addon>
 
-    <addon id="plugin.program.kamuiwidgets" name="Kamui Widgets" version="1.1.6" provider-name="Obito">
+    <addon id="plugin.program.kamuiwidgets" name="Kamui Widgets" version="1.1.7" provider-name="Obito">
         <requires>
             <import addon="xbmc.python" version="2.1.0" />
             <import addon="script.module.requests" version="1.1.0" />
@@ -1945,7 +1945,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	</extension>
 </addon>
 
-<addon id="script.module.lambdascrapers" name="Lambdascrapers Module" version="1.6.0" provider-name="I-A-C">
+<addon id="script.module.lambdascrapers" name="Lambdascrapers Module" version="1.6.1" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
@@ -1954,7 +1954,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	<extension point="xbmc.python.pluginsource" library="lib/default.py">
 		<provides>executable</provides>
 	</extension>
-	<extension point="xbmc.service" library="CleanupService.py" start="startup" />
 		<extension point="xbmc.addon.metadata">
 			<platform>all</platform>
 			<summary lang="en">Lambdascrapers Module</summary>
@@ -2817,7 +2816,7 @@ WebUI: http://ip_box:6878/webui/app/WEBUITOKEN/server
   </extension>
 </addon>
 
-<addon id="skin.estuary.kamui" version="1.1.0" name="Estuary Kamui" provider-name="phil65, Ichabod Fletchman, Obito">
+<addon id="skin.estuary.kamui" version="1.1.1" name="Estuary Kamui" provider-name="phil65, Ichabod Fletchman, Obito">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="plugin.program.kamuiwidgets" />
