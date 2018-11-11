@@ -404,7 +404,7 @@ Adapted to new JSON structure.
   </extension>
 </addon>
 
-<addon id="plugin.video.kamui" version="1.0.5" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
+<addon id="plugin.video.kamui" version="1.0.6" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.kamui" />
