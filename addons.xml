@@ -482,39 +482,31 @@ Adapted to new JSON structure.
   </extension>
 </addon>
 
-<addon id="plugin.video.kamui" version="1.0.6" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
+<addon id="plugin.video.kamui" version="1.0.7" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.kamui" />
-        <import addon="script.module.lambdascrapers"/>
 		<import addon="script.kamui.artwork" />
 		<import addon="script.kamui.metadata" />
 		<import addon="script.module.resolveurl" />
 		<import addon="script.module.requests" />
-		<import addon="script.module.metahandler" />
-        <import addon="plugin.video.youtube"/>
+		<import addon="script.module.lambdascrapers" />
+		<import addon="script.module.metahandler" version="1.0.0" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
 		<provides>video</provides>
-        <provides>audio</provides>
 	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Kamui Streams</summary>
-		<description>Covenant Fork</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
-</disclaimer>
+		<description lang="en">[B]Kamui Streams[/B][CR] [B]***Exodus Fork***[/B][CR][CR]This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.[CR][CR]The author does not host any of the content in this addon and takes no responsibility for content found.</description>
+		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
 		<platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-		<license>Beerware rev. 42</license>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
-    			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+    		<screenshot></screenshot>
 		</assets>
 		<news></news>
 	</extension>
@@ -1364,65 +1356,6 @@ Fixed View Types not being set
 	</extension>
 </addon>
 
-<addon id="repository.gaia.2" version="2.1.0" name="Gaia Repository 2" provider-name="Gaia">
-	<extension point="xbmc.addon.repository" name="Gaia Repository Mirror 2">
-		<dir>
-			<info compressed="false">https://bitbucket.org/gaiaorigin/gaiaorigin/raw/HEAD/common/addons.xml?v=2.1.0</info>
-			<checksum>https://bitbucket.org/gaiaorigin/gaiaorigin/raw/HEAD/common/addons.xml.md5?v=2.1.0</checksum>
-			<datadir zip="true">https://bitbucket.org/gaiaorigin/gaiaorigin/raw/HEAD/common/</datadir>
-		</dir>
-		<info compressed="false">https://bitbucket.org/gaiaorigin/gaiaorigin/raw/HEAD/addons.xml?v=2.1.0</info>
-		<checksum>https://bitbucket.org/gaiaorigin/gaiaorigin/raw/HEAD/addons.xml.md5?v=2.1.0</checksum>
-		<datadir zip="true">https://bitbucket.org/gaiaorigin/gaiaorigin/raw/HEAD/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Gaia Secondary Repository</summary>
-		<description lang="en">The Gaia repository for the addon, resources, extensions, and external addons. Any of the Gaia mirror repositories can be used for installation and updates.</description>
-		<disclaimer lang="en">Gaia and its developers are not in any way affiliated with Kodi, Premiumize, OffCloud, RealDebrid, EasyNews, or any of the sites and providers used in the addon.<br/>Gaia is and always will be free and open-source. None of its code and resources may be sold or redistributed for any commercial purposes.<br/>Gaia and its developers do not host, create, or distribute any of the content displayed in the addon, it simply searches public websites.</disclaimer>
-		<platform>all</platform>
-		<license>GPL 3.0</license>
-		<website>https://gaiakodi.com</website>
-		<forum>https://gaiakodi.com/?support</forum>
-	</extension>
-</addon>
-
-<addon id="repository.gaia.3" version="2.1.0" name="Gaia Repository 3" provider-name="Gaia">
-	<extension point="xbmc.addon.repository" name="Gaia Repository 3">
-		<!--
-
-		GitLab has blocked raw file access.
-		For now the GitLab repo has been disabled and it is also not a dependency of Gaia anymore.
-		However, the GitLab repo is still updated and can be manually accessed using a borwser
-
-		<dir>
-			<info compressed="false">https://gitlab.com/gaiaorigin/gaiaorigin/raw/HEAD/common/addons.xml?v=2.1.0</info>
-			<checksum>https://gitlab.com/gaiaorigin/gaiaorigin/raw/HEAD/common/addons.xml.md5?v=2.1.0</checksum>
-			<datadir zip="true">https://gitlab.com/gaiaorigin/gaiaorigin/raw/HEAD/common/</datadir>
-		</dir>
-		<info compressed="false">https://gitlab.com/gaiaorigin/gaiaorigin/raw/HEAD/addons.xml?v=2.1.0</info>
-		<checksum>https://gitlab.com/gaiaorigin/gaiaorigin/raw/HEAD/addons.xml.md5?v=2.1.0</checksum>
-		<datadir zip="true">https://gitlab.com/gaiaorigin/gaiaorigin/raw/HEAD/</datadir>
-		-->
-		<dir>
-			<info compressed="false"></info>
-			<checksum></checksum>
-			<datadir zip="true"></datadir>
-		</dir>
-		<info compressed="false"></info>
-		<checksum></checksum>
-		<datadir zip="true"></datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Gaia Tertiary Repository</summary>
-		<description lang="en">The Gaia repository for the addon, resources, extensions, and external addons. Any of the Gaia mirror repositories can be used for installation and updates.</description>
-		<disclaimer lang="en">Gaia and its developers are not in any way affiliated with Kodi, Premiumize, OffCloud, RealDebrid, EasyNews, or any of the sites and providers used in the addon.<br/>Gaia is and always will be free and open-source. None of its code and resources may be sold or redistributed for any commercial purposes.<br/>Gaia and its developers do not host, create, or distribute any of the content displayed in the addon, it simply searches public websites.</disclaimer>
-		<platform>all</platform>
-		<license>GPL 3.0</license>
-		<website>https://gaiakodi.com</website>
-		<forum>https://gaiakodi.com/?support</forum>
-	</extension>
-</addon>
-
 <addon id="repository.jsergio" name="jsergio repo" version="1.0.3" provider-name="jsergio">
 	<extension point="xbmc.addon.repository" name="jsergio repo">
         <dir>
@@ -1744,34 +1677,26 @@ Fixed View Types not being set
   </extension>
 </addon>
 
-<addon id="script.kamui.artwork" version="2.0.1" name="Kamui Artwork" provider-name="Obito">
+<addon id="script.kamui.artwork" version="2.0.2" name="Kamui Artwork" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>
 	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
-		<summary>Themes for Kamui  Addon</summary>
-		<description>Artwork Module for the Kamui  Addon</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
+		<summary>Themes for the Kamui Streams Addon</summary>
+		<description></description>
 		<platform>all</platform>
 	</extension>
 </addon>
 
-<addon id="script.kamui.metadata" version="2.0.1" name="Kamui Metadata" provider-name="Obito">
+<addon id="script.kamui.metadata" version="2.0.2" name="Kamui Streams Metadata" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>
 	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
-		<summary>Metadata for the Kamui Addon</summary>
-		<description>Metadata for Kamui is maintained separately to make distribution of the the addon itself easier/faster.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
+		<summary>Metadata for the Kamui Streams Addon</summary>
+		<description>Metadata for Kamui Streams are maintained separately to make distribution of the the addon itself easier/faster.</description>
 		<platform>all</platform>
 	</extension>
 </addon>
@@ -2136,7 +2061,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="script.module.kamui" name="Kamui Module" version="1.0.7" provider-name="Obito">
+<addon id="script.module.kamui" name="Kamui Module" version="1.0.8" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
@@ -2144,11 +2069,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-		<summary lang="en">Kamui</summary>
-		<description>Covenant Fork</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
+		<summary lang="en">Kamui Streams</summary>
 	</extension>
 </addon>
 
