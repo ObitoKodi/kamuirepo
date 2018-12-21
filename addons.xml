@@ -1,5 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="context.seren" version="0.6" name="Seren - Global Context Menu Items" provider-name="Nixgates">
+	<requires>
+		<import addon="xbmc.python" version="2.23.0" />
+		<import addon="plugin.video.seren" version="0.1.22" />
+	</requires>
+	<extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="shuffle.py">
+                <label>Shuffle Play</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+String.IsEqual(ListItem.dbtype,tvshow)</visible>
+            </item>
+			<item library="findSimilar.py">
+                <label>Find Similar</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+            </item>
+			<item library="rescrape.py">
+                <label>Rescrape Item</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+            </item>
+			<item library="sourceSelect.py">
+                <label>Source Select</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+            </item>
+			<item library="browseShow.py">
+                <label>Browse Show</label>
+                <visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+            </item>
+			<item library="traktManager.py">
+				<label>Trakt Manager</label>
+				<visible>String.StartsWith(ListItem.path,plugin://plugin.video.seren/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,tvshow)|String.IsEqual(ListItem.dbtype,season)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+        </menu>
+    </extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Seren - This Addon is currently in beta. Please be aware there may be bugs present</summary>
+		<description lang="en">Adds Global Contextual Menu Items for Seren menu items throughout Kodi
+		</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<disclaimer lang="en"></disclaimer>
+		<assets>
+			<icon>temp-icon.png</icon>
+			<fanart>temp-fanart.png</fanart>
+		</assets>
+		<news>
+Changelog Version 0.5:
+Fixed Source Select (Changed built-in function to PlayMedia)
+
+Changelog Version 0.4:
+Trakt Manager now available for season objects
+
+Changelog Version 0.3:
+Fixed Shuffle play on continue watching items
+Added Browse Show for TV show items
+Removed Torrent File Select - Moved to internal seren Menus only
+Added Trakt Manager
+		</news>
+	</extension>
+</addon>
+
 <addon id="plugin.audio.mixcloud"
        name="MixCloud"
        version="2.4.1"
@@ -44,12 +107,43 @@
   </extension>
     </addon>
 
-    <addon id="plugin.program.kamuiwidgets" name="Kamui Widgets" version="1.1.9" provider-name="Obito">
+    <addon id="plugin.program.kamuiwidgets" name="Kamui Widgets" version="1.2.0" provider-name="Obito">
         <requires>
             <import addon="xbmc.python" version="2.1.0" />
             <import addon="script.module.requests" version="1.1.0" />
             <import addon="script.module.addon.common" />
 			<import addon="plugin.video.wrestlemaniac" />
+			<import addon="plugin.video.seren" />
+			<import addon="plugin.video.kamui" />
+			<import addon="plugin.video.gaia" />
+			<import addon="plugin.video.AtTheFlix" />
+			<import addon="plugin.video.documented.hd" />
+			<import addon="plugin.video.binkytv" />
+			<import addon="plugin.video.cartoonhd" />
+			<import addon="plugin.video.9anime" />
+			<import addon="plugin.video.iplayerwww" />
+			<import addon="plugin.video.itv" />
+			<import addon="plugin.video.JokerSports" />
+			<import addon="plugin.video.jre.tva" />
+			<import addon="plugin.video.LiveTube" />
+			<import addon="plugin.video.masteraniredux" />
+			<import addon="plugin.video.mdmtvuk" />
+			<import addon="plugin.video.SkyNet" />
+			<import addon="plugin.video.sparkle" />
+			<import addon="plugin.video.spotitube" />
+			<import addon="plugin.video.tvplayer" />
+			<import addon="plugin.video.twitch" />
+			<import addon="plugin.video.ufc-finest" />
+			<import addon="plugin.video.uktvplay" />
+			<import addon="plugin.video.watchnixtoons" />
+			<import addon="plugin.video.wwe-on-youtube" />
+			<import addon="plugin.video.XFactorInternational" />
+			<import addon="plugin.video.youtube" />
+			<import addon="plugin.video.youtube.lbb" />
+			<import addon="plugin.video.youtube.monstercat" />
+			<import addon="plugin.video.ytMMA" />
+			<import addon="program.plexus" />
+			<import addon="plugin.audio.mixcloud" />
         </requires>
         <extension point="xbmc.python.pluginsource" library="default.py">
            <provides>executable</provides>
@@ -75,7 +169,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.9anime" name="9Anime" provider-name="DxCx" version="0.0.50">
+<addon id="plugin.video.9anime" name="9Anime" provider-name="DxCx" version="0.0.51">
   <requires>
     <import addon="xbmc.python" version="2.25.0" />
     <import addon="script.module.requests" version="2.12.4" />
@@ -161,37 +255,21 @@
   </extension>
 </addon>
 
-
 <addon id="plugin.video.DecadoDocs" name="Decado Documentaries" version="1.0.3" provider-name="MetalKettle">
-
   <requires>
-
     <import addon="xbmc.python" version="2.1.0"/>
-
     <import addon="script.module.t0mm0.common" version="2.0.0"/>
-
     <import addon="plugin.video.youtube" version="3.0.0"/>
-
     <import addon="script.common.plugin.cache" version="2.5.2"/>
-
   </requires>
-
   <extension point="xbmc.python.pluginsource" library="default.py">
-
         <provides>video</provides>
-
   </extension>
-
   <extension point="xbmc.addon.metadata">
-
     <summary lang="en"></summary>
-
     <description lang="en"></description>
-
     <platform>all</platform>
-
   </extension>
-
 </addon>
 
 <addon id="plugin.video.documented.hd"
@@ -459,7 +537,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
     </extension>
 </addon>
 
-<addon id="plugin.video.LiveTube" name="Live Tube" version="1.0.2" provider-name="Tvaddons">
+<addon id="plugin.video.LiveTube" name="Live Tube" version="1.0.3" provider-name="Tvaddons">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="plugin.video.youtube"/>
@@ -558,41 +636,173 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="plugin.video.neptune" version="1.3.9" name=" Neptune Rising" provider-name="Mr. Blamo">
+<addon id="plugin.video.seren" version="0.1.24" name="Seren" provider-name="Nixgates">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
-		<import addon="script.neptune.artwork" />
-		<import addon="script.neptune.metadata" />
-                <import addon="script.module.resolveurl"/>
-                <import addon="script.module.metahandler"/>
-                <import addon="script.module.requests"/>
-                <import addon="script.module.beautifulsoup"/>
-                <import addon="script.module.schism.common"/>
-                <import addon="script.module.futures"/>
-        		<import addon="script.module.universalscrapers" version="1.0.0" />
+		<import addon="script.module.requests" version="2.19.1" />
+		<import addon="script.module.beautifulsoup4" version="4.5.3"/>
+		<import addon="script.module.metahandler" version="1.0.0" />
+		<import addon="plugin.video.youtube" version="6.2.0"/>
+		<import addon="script.module.addon.signals" version="0.0.1"/>
 	</requires>
-	<extension point="xbmc.python.pluginsource" library="neptune.py">
+	<extension point="xbmc.python.pluginsource" library="seren.py">
 		<provides>video</provides>
 	</extension>
-	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.service" library="service.py" />
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Neptune Rising</summary>
-		<description lang="en">Movie, TV Show, and Playlist Add-on</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
-</disclaimer>
+		<summary lang="en">Seren - This Addon is currently in beta. Please be aware there may be bugs present</summary>
+		<description lang="en">
+		</description>
 		<platform>all</platform>
-		<license>Beerware rev. 42</license>
-		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
 		<forum></forum>
 		<website></website>
 		<source></source>
+		<disclaimer lang="en">The author of this addon takes no responsibility for any 3rd party intergration or modification of this software, please ensure your use of this software abides by your local and insterstate laws.</disclaimer>
 		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
+			<icon>temp-icon.png</icon>
+			<fanart>temp-fanart.png</fanart>
 		</assets>
-		<news></news>
+		<news>
+
+Version 0.1.24 Changelog:
+Fixed Movie Watchlist Sort to content type "Show"
+
+Version 0.1.23 Changelog:
+Added Watchlist sorting
+Added extra fallbacks for trakt outages
+Changed tools setSetting to a function so Kodi modules are not initialised if there is an exception
+
+Version 0.1.22 Changelog:
+Re-installation and updating of provider packages now honors previous settings
+Fixed Hidden items error if no connection to Trakt could be made.
+
+Version 0.1.21 Changelog:
+Added onAVStarted for Kodi 18+ due to issues with offset
+Re-factored code and cleaned up imports
+
+Version 0.1.20 Changelog:
+Provider installer re-write
+Provider packages can now update automatically or manually
+Fixed Trakt Movie Scrobbling
+Fixed Finish Watching Movies
+Added Remove (movie/episode) Progress to Trakt Manager
+
+Version 0.1.19 Changelog:
+Fixed Hidden Items (Possibly - please check)
+Trakt Lists now paginated and sorted
+Silent Scraper setting now reset on startup incase of Kodi crash
+New Shows and recently updated shows now filtered by Kodi Languge
+Corrected some typos
+Extended relevant show pack identification
+Un-aired episodes now removed from automatic playlist generator
+Premiumize autocache now runs premiumize cleanup instead of deleting transfer
+Added option to allow premiumize users to utilize transcoded files
+Added Banner image to episode objects
+Seasons now sorted by season number and not title
+Added basic duplicate provider filtering (provider name only)
+Show premiered dates now retrieved from Trakt and not TVDB
+
+Version 0.1.18 Changelog:
+Added fallback from TMDB SSL certificate issues
+
+Version 0.1.17 Changelog:
+Removed Trakt Lists pagination (Fixed List Sorting)
+Complete work over of TV show continue watching display
+Added Sort Options for Next Up
+Renamed and moved Continue Watching Menu items to "Finish Watching" and added to their respective folders
+
+Version 0.1.16 Changelog:
+Fixed season items not being marked as watched
+Added try/except clauses to catch errors with get_hidden_items
+Adjust Info detection to better detect source information
+Added fallback if info list was empty for Source Select
+Added ability to show sources in source select as a single line in case of skins that do not support the multiline view
+Simplified provider failure output
+Added removal of unknown video keys for Kodi 18
+Removed trakt list lengths
+Premiumize module now removes items from account if it failed to resolve a link
+Premiumize cleanup now occurs at end of resolving
+Threads no longer marked as daemon as it doesn't work within Kodi
+Forced provider threads to return if getSources canceled
+Added fallback for gathering of hoster domains
+
+Version 0.1.15 Changelog:
+Fallback for DateTime ValueError
+Changed process of list generating so window shouldn't contain random number of items
+
+Version 0.1.14 Changelog:
+Increased Trakt Caching
+
+Version 0.1.13 Changelog:
+Source Select items now clickable
+Esc Key now closes Source Select dialog
+
+Version 0.1.12 Changelog:
+Added premiumize transfer database cleanup to maintenance script
+Changed scrobble ID back to Trakt as IMDB ID was unreliable causing trakt progress for some random show called pride
+if the IMDB ID wasn't available for an episode (sorry for my testers watching origin)
+Fixed issue with keepalive not dying causing scrobble issues and issues with Upnext
+Added 265 priority sort
+Some spelling mistakes
+Changed Upnext episode IDs to Trakt ID
+Added setUniqueIDs to tools.addDirectoryItem function
+Hide Item in trakt manager now actually sends the trakt request (Bad nix)
+
+Version 0.1.11 Changelog:
+Added workaround for Kodi 18 Widgets
+Increased support for Kodi 18 player
+Fixed issue with Kodi 18 where pre-emptive scraping wouldn't occur
+Adjusted menu content types so they now respect their content correctly
+
+Version 0.1.10 Changelog:
+Adjusted Migration Script so it no longer broke Super Faviorates
+Adjusted TMDB movie artwork to fix issue where it would display the wrong media (removed thumbnail)
+
+Version 0.1.09 Changelog:
+Increased torrent file identification
+Extended timeout for failed cache assit attempts to 3 hours
+Changed Trkat Scrobble Object to current playing item IMDB Number
+Fixed Trakt Scrobbling with Up Next Addon Intergration
+Fixed Trakt Scrobbling when seeking
+Added increased fallbacks for TV show metadata
+
+Version 0.1.08 Changelog:
+Restructed Settings page to use subsetting attribute
+Added Support for Context Menu Addon
+
+Version 0.1.07 Changelog:
+Added automatic migration from incorrect addon ID release
+Added Notification if no sources are found during pre-scrape
+Removed manual cache dialog prompt during pre-emptive scraping
+Cache inserts now threaded
+Added Semaphore to relieve thread pressure on database
+Fixed KeyError exception in TVDB episode function
+Custom Windows are now removed from scope with del
+Removed Please Check Internet Connection Dialog
+Added Logging for RD refresh Errors
+
+Version 0.1.06 Changelog:
+Added 3D filter Setting
+Added File Size Limit
+Added View types for Seasons, Episodes and Default for Menus
+Added Debrid Priorities
+Added Install UpNext Addon Setting
+Fixed capitalised Addon ID
+Fixed issue where TVDB token was not initially created
+Added ability to hide items from trakt manager
+Adjusted Source Select to multiline string
+Increased listitem size in custom source select window
+
+Version 0.1.05 Changelog:
+Added better Hoster support
+Changed hoster domains to (domain, name) tuple
+Fixed issue where color change would set color even if cancelled
+Cleaned up logging
+Fixed Manual Caching
+Adjusted Manual Caching display string
+Fixed View Types not being set
+		</news>
 	</extension>
 </addon>
 
@@ -725,11 +935,11 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id='plugin.video.twitch' version='2.3.4' name='Twitch' provider-name='A Talented Community'>
+<addon id='plugin.video.twitch' version='2.4.0' name='Twitch' provider-name='A Talented Community'>
     <requires>
         <import addon='xbmc.python' version='2.20.0'/>
         <import addon='script.module.six' version='1.11.0'/>
-        <import addon='script.module.python.twitch' version='2.0.2'/>
+        <import addon='script.module.python.twitch' version='2.0.5'/>
         <import addon='script.module.requests' version='2.9.1'/>
     </requires>
     <extension point='xbmc.python.pluginsource' library='resources/lib/addon_runner.py'>
@@ -739,21 +949,21 @@ This is a Non-profit resource, organized solely for educational purposes which i
     <extension point='xbmc.addon.metadata'>
         <platform>all</platform>
         <news>
-2.3.4
-[fix] clean_title_value UnicodeDecodeError
-[fix] Game titles UnicodeEncodeError
-[fix] python 3 compat. urllib.quote_plus
-
-2.3.3
-[fix] Description template UnicodeDecodeError
-[chg] Use unicode punctuation space in description template
+2.4.0
+[add] allow limiting framerate to 30 fps when video quality is set to Source
+[fix] change import from absolute to relative
+[chg] clips default to source quality instead of always ask
+[chg] refresh live previews by adding timestamp to urls
+[upd] re-write of search history
+[upd] use SPDX license identifiers
         </news>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.png</fanart>
         </assets>
+        <language></language>
         <source>https://github.com/MrSprigster/Twitch-on-Kodi</source>
-        <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</license>
+        <license>GPL-3.0-only</license>
         <forum>http://forum.kodi.tv/showthread.php?tid=134538</forum>
         <summary lang='en_GB'>Twitch video plugin</summary>
         <description lang='en_GB'>Watch your favorite gaming streams!</description>
@@ -918,7 +1128,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.2.0" provider-name="bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.2.3" provider-name="bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -932,29 +1142,26 @@ This is a Non-profit resource, organized solely for educational purposes which i
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-6.2.0
-[add] Context menu -&gt; &#39;Play with subtitles&#39; |contrib: solarus|
-[add] Option to download subtitles before playback in Settings -&gt; General -&gt; Configure subtitles
-[add] Refresh context menu to all videos/live streams
-[add] &amp;strm=true parameter for strm files in Kodi 18 |contrib: vlmaksime|
-    - use description from library and set watched status
-[add] &#39;Settings -&gt; Advanced -&gt; Use YouTube website urls&#39; for external/alternative players
-            eg. Player: MPC-BE, URL: https://www.youtube.com/watch?v=C0NyvxTJGcQ
-[fix] Reported background progress dialog percentage
-[fix] Playlist items, use video_items instead of playback_items
-[fix] search history size
-[fix] remove Spanish (Latin America)|es-419 from the setup wizard, causing invalidLanguage and invalidRelevanceLanguage errors
-[upd] Improve speed of playback starting and resolver
-            before: min: 1.5s max: 2.6s median: 1.7s
-            after:  min: 0.9s max: 2.6s median: 1.2s
-[chg] refactor logging and system version
-[chg] Localize confirmation
+6.2.3
+[add] Next Page to 'More...' -> 'Add to...' context menu
+[add] icon and description to playlists in 'More...' -> 'Add to...' context menu on Kodi 17+
+[add] 'Play audio only' context menu item
+[fix] generated dash with no supported video streams(audio only) being played when Audio only not enabled
+[fix] potential RuntimeError when retrieving total time of playing content if player is stopped immediately
+[lang] nl_nl strings |contrib: Markman-B|
+[lang] pl_pl strings |contrib: xulek|
+[lang] pl_pl strings |contrib: drrak|
+[lang] sk_sk strings |contrib: jose1711|
 [lang] el_gr strings |contrib: twilight0|
 [lang] es_es strings |contrib: roliverosc|
-[lang] es_mx strings |contrib: Intel11|
-[lang] it_it strings |contrib: SebastianoPistore|
-[lang] nl_nl strings |contrib: Markman-B|
-[lang] ru_ru strings |contrib: vlmaksime|
+
+6.2.2
+[fix] signature function not found on some videos
+
+6.2.1
+[fix] some streams reporting as Unavailable
+[fix] utf-8 file paths
+[fix] settings, and switch user causing perpetual busy dialog on Kodi 18
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -993,6 +1200,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
         <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
         <summary lang="nb_NO">Tillegg for YouTube</summary>
         <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
+        <language></language>
         <platform>all</platform>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <forum>https://forum.kodi.tv/showthread.php?tid=325740</forum>
@@ -1320,6 +1528,20 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	</extension>
 </addon>
 
+<addon id="repository.nixgates" name="Nixgates Repo" version="1.0.0" provider-name="Nixgates">
+	<extension point="xbmc.addon.repository" name="Nixgates Repo">
+		<info compressed="false">https://raw.githubusercontent.com/nixgates/nixgates/master/packages/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/nixgates/nixgates/master/packages/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/nixgates/nixgates/master/packages</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Nixgates</summary>
+		<description>Nixgates Repository</description>
+		<disclaimer></disclaimer>
+		<platform>all</platform>
+	</extension>
+</addon>
+
     <addon id="repository.noname" name="[COLOR crimson]No Name Repository[/COLOR]" version="1.0.2" provider-name="No Name">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
@@ -1384,20 +1606,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
             <platform>all</platform>
         </extension>
     </addon>
-
-<addon id="repository.vader-streams.tv" name="Vaders.tv Add-ons" version="1.0.3" provider-name="DarthVader">
-	<extension point="xbmc.addon.repository" name="Vaders.tv Add-ons Add-on Repository">
-		<info compressed="false">http://repo.vaders.tv/repo/addons.xml</info>
-		<checksum>http://repo.vaders.tv/repo/addons.xml.md5</checksum>
-                <datadir zip="true">http://repo.vaders.tv/repo/</datadir>
-                </extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Install Add-ons from vader-streams.tv</summary>
-		<description>Download and install add-ons from vaders.tv addon repository.[CR][CR]By using this Repository you will be able to take advantage of our cutting edge features.</description>
-		<disclaimer>DarthVader</disclaimer>
-		<platform>all</platform>
-	</extension>
-</addon>
 
 <addon id="repository.wod" name="Wrestling Repository" version="1.3" provider-name="WOD">
 	<extension point="xbmc.addon.repository" name="Wrestling Repository">
@@ -1570,7 +1778,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
 
 <addon id="script.module.addon.common"
 	     name="Common addon methods"
-	     version="2.0.0"
+	     version="2.0.1"
 	     provider-name="Eldorado (original: t0mm0)">
   <requires>
     <import addon="xbmc.python" version="2.1.0" />
@@ -1944,25 +2152,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	</extension>
 </addon>
 
-<addon id="script.module.lambdascrapers" name="Lambdascrapers Module" version="1.6.3" provider-name="Obito">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0" />
-		<import addon="script.module.beautifulsoup4"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.python.pluginsource" library="lib/default.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.service" library="CleanupService.py" start="startup" />
-		<extension point="xbmc.addon.metadata">
-			<platform>all</platform>
-			<summary lang="en">Lambdascrapers Module</summary>
-			<description>Scrape common video host for URL's to be playable in XBMC/Kodi, simplifying addon development of video plugins requiring multi video hosts.</description>
-        		<disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        		<license>Beerware rev. 42</license>
-		</extension>
-</addon>
-
 <addon id="script.module.liveresolver"
      name="LiveResolver"
      version="0.1.50"
@@ -2051,7 +2240,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
         </extension>
 </addon>
 
-<addon id="script.module.orion" version="1.2.7" name="Orion" provider-name="Orion">
+<addon id="script.module.orion" version="1.3.0" name="Orion" provider-name="Orion">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="repository.orion" version="1.0.0" optional="true" />
@@ -2122,17 +2311,19 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.4" provider-name="A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.5" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
-        <import addon="script.module.six" version="1.9.0"/>
-        <import addon="script.module.requests" version="2.9.1"/>
+        <import addon="script.module.six" version="1.11.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
     </requires>
     <extension point="xbmc.python.module" library="resources/lib"/>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[fix] video/live stream token encoding
+[add] add frame rate and resolution to returned stream information
+[upd] update usher parameters
+[upd] use SPDX license identifiers
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -2140,7 +2331,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
         <platform>all</platform>
         <summary lang="en_GB">Module for interaction with the Twitch.tv API</summary>
         <description lang="en_GB">python-twitch for Kodi is module for interaction with the Twitch.tv API based on python-twitch by ingwinlu.</description>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <license>GPL-3.0-only</license>
         <source>https://github.com/MrSprigster/script.module.python.twitch</source>
         <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
@@ -2243,8 +2434,8 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
 
 <addon id="script.module.simplejson"
        name="simplejson"
-       version="3.3.0"
-       provider-name="Martijn">
+       version="3.4.0"
+       provider-name="Bob Ippolito">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -2347,7 +2538,7 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
   </extension>
 </addon>
 
-<addon id="script.module.streamlink.base" name="Streamlink Library" version="2018.06.10.1" provider-name="Streamlink Devs, Twilight0">
+<addon id="script.module.streamlink.base" name="Streamlink Library" version="2018.10.31" provider-name="Streamlink Devs, Twilight0">
   <requires>
     <import addon="xbmc.python" version="2.24.0"/>
     <import addon="script.module.requests" version="2.12.4"/>
@@ -2362,17 +2553,15 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
     <license>Simplified BSD</license>
     <source>https://github.com/Twilight0/script.module.streamlink.base/</source>
     <language>en</language>
-    <assets>
-      <icon>resources/icon.png</icon>
-    </assets>
-    <news>+ 2018.06.10
-- Various plugin updates
-- Added issue template
-- Improved README</news>
+    <!--<assets>-->
+      <!--<icon>resources/icon.png</icon>-->
+    <!--</assets>-->
+    <news>+ 2018.10.31
+- Rebase to latest upstream commit eab005175d4b76dde3d1becacd718b646384a15e</news>
   </extension>
 </addon>
 
-<addon id="script.module.streamlink.crypto" name="streamlink.crypto" version="1.4.0" provider-name="Streamlink.crypto">
+<addon id="script.module.streamlink.crypto" name="streamlink.crypto" version="1.5.0" provider-name="Streamlink.crypto">
   <requires>
     <import addon="xbmc.python" version="2.14.0"/>
   </requires>
@@ -2457,7 +2646,7 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
 	</extension>
 </addon>
 
-<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.1.1.a" provider-name="Team Universal">
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.1.3" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -2505,7 +2694,7 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
   </extension>
 </addon>
 
-<addon id="script.module.urlresolver" name="URLResolver" version="5.0.24" provider-name="tvaddons">
+<addon id="script.module.urlresolver" name="URLResolver" version="5.0.27" provider-name="tvaddons">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="plugin.video.youtube" optional="true" />
@@ -2569,35 +2758,6 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
         <source>https://github.com/martinblech/xmltodict</source>
         <forum></forum>
     </extension>
-</addon>
-
-<addon id="script.neptune.artwork" version="1.1.2" name="Neptune Rising Artwork" provider-name="Mr. Blamo">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary>Themes for the Neptune Rising Addon</summary>
-		<description>Themes for Neptune Rising are maintained separately to make distribution of the the addon itself easier/faster.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
-</disclaimer>
-		<platform>all</platform>
-		<license>Beerware rev. 42</license>
-	</extension>
-</addon>
-
-<addon id="script.neptune.metadata" version="1.0.5" name="Neptune Rising Metadata" provider-name="Mr.Blamo">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary>Metadata for the Neptune Rising Addon</summary>
-		<description>Metadata for Neptune Rising are maintained separately to make distribution of the the addon itself easier/faster.</description>
-		<platform>all</platform>
-	</extension>
 </addon>
 
 <addon id="script.retrosmc" name="RetrOSMC" version="0.0.2" provider-name="mcobit">
