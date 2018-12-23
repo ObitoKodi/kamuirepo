@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.estuary.kamui" version="1.1.2" name="Estuary Kamui" provider-name="phil65, Ichabod Fletchman, Obito">
+<addon id="skin.estuary.kamui" version="1.1.3" name="Estuary Kamui" provider-name="phil65, Ichabod Fletchman, Obito">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="plugin.program.kamuiwidgets" />
