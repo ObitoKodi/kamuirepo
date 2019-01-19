@@ -2061,7 +2061,7 @@ Fixed View Types not being set
   </extension>
 </addon>
 
-<addon id="script.module.kamui" name="Kamui Module" version="1.0.8" provider-name="Obito">
+<addon id="script.module.kamui" name="Kamui Module" version="1.0.9" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
