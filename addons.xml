@@ -481,7 +481,7 @@ Fix duplicate of last subtitle.
   </extension>
 </addon>
 
-<addon id="plugin.video.kamui" version="1.0.8" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
+<addon id="plugin.video.kamui" version="1.0.9" name="[COLOR red]Kamui[/COLOR] [COLOR white]Streams[/COLOR]" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.kamui" />
@@ -489,7 +489,7 @@ Fix duplicate of last subtitle.
 		<import addon="script.kamui.metadata" />
 		<import addon="script.module.resolveurl" />
 		<import addon="script.module.requests" />
-		<import addon="script.module.lambdascrapers" />
+		<import addon="script.module.openscrapers" />
 		<import addon="script.module.metahandler" version="1.0.0" />
 	</requires>
 	<extension point="xbmc.python.pluginsource" library="default.py">
@@ -1326,7 +1326,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 	</extension>
 </addon>
 
-<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.4" provider-name="Obito">
+<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.5" provider-name="Obito">
     <extension point="xbmc.addon.repository" name="Kamui Repository">
 	<dir>
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml</info>
@@ -1351,31 +1351,17 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 		<checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
 		<datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
 	</dir>
-	<dir>
-        <info compressed="false">https://raw.githubusercontent.com/I-A-C/zips/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/I-A-C/zips/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/I-A-C/zips/master/</datadir>
-	</dir>
+    <dir>
+        <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/</datadir>
+    </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>http://kamui.online/ This is Hell</summary>
         <description>Kamui Pack Repo</description>
         <platform>all</platform>
     </extension>
-</addon>
-
-<addon id="repository.lambdascrapers" name="Lambdascrapers Repo" version="0.0.2" provider-name="I-A-C">
-	<extension point="xbmc.addon.repository" name="Lambdascrapers Repo">
-		<info compressed="false">https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/I-A-C/LambdaScrapers/master/zips/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Lambdascrapers</summary>
-		<description>Lambdascrapers</description>
-		<disclaimer></disclaimer>
-		<platform>all</platform>
-	</extension>
 </addon>
 
 <addon id="repository.magicality" name="Magicality Repo" version="0.0.4" provider-name="Wilson Magic">
@@ -2027,7 +2013,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
   </extension>
 </addon>
 
-<addon id="script.module.kamui" name="Kamui Module" version="1.0.10" provider-name="Obito">
+<addon id="script.module.kamui" name="Kamui Module" version="1.0.11" provider-name="Obito">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 		<import addon="script.module.beautifulsoup4"/>
