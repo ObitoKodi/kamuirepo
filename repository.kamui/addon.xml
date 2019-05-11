@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.6" provider-name="Obito">
+<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.7" provider-name="Obito">
     <extension point="xbmc.addon.repository" name="Kamui Repository">
 	<dir>
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml</info>
@@ -33,6 +33,11 @@
 	    <info compressed="false">http://supremacy.org.uk/zip/plugin/addon.xml</info>
 		<checksum>http://supremacy.org.uk/zip/plugin/addons.xml.md5</checksum>
 		<datadir zip="true">http://supremacy.org.uk/zip/plugin/</datadir>
+	</dir>
+	<dir>
+	    <info compressed="false">https://raw.githubusercontent.com/DxCx/repo.plugin.video.9anime/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/DxCx/repo.plugin.video.9anime/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/DxCx/repo.plugin.video.9anime/master</datadir>
 	</dir>	
     </extension>
     <extension point="xbmc.addon.metadata">
