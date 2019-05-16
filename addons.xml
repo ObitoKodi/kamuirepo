@@ -332,30 +332,35 @@ Channels and Playlists organized by categories. Source Youtube Website.
     </extension>
 </addon>
 
-<addon id="plugin.video.gaia" version="3.2.5" name="Gaia" provider-name="Gaia">
+<addon id="plugin.video.gaia" version="4.1.1" name="Gaia" provider-name="Gaia">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 
-		<import addon="script.gaia.resources" version="3.2.5" />
-		<import addon="script.gaia.artwork" version="3.0.0" />
-		<import addon="script.gaia.binaries" version="3.0.0" optional="true" />
-		<import addon="script.gaia.icons" version="3.2.5" optional="true" />
-		<import addon="script.gaia.skins" version="3.0.0" optional="true" />
-		<import addon="skin.gaia.aeon.nox" version="2.2.0" optional="true" />
-		<import addon="repository.gaia" version="3.2.1" optional="true" />
+		<import addon="script.gaia.resources" version="4.1.0" />
+		<import addon="script.gaia.artwork" version="4.0.0" />
+		<import addon="script.gaia.binaries" version="4.0.0" optional="true" />
+		<import addon="script.gaia.icons" version="4.1.0" optional="true" />
+		<import addon="script.gaia.skins" version="4.0.0" optional="true" />
+		<import addon="repository.gaia" version="4.0.0" optional="true" />
 
-		<import addon="script.module.orion" version="1.0.3" />
+		<import addon="script.module.orion" version="2.0.0" />
 		<import addon="script.module.resolveurl" version="5.0.06" />
 		<import addon="script.module.urlresolver" version="3.0.29" />
 		<import addon="script.module.metahandler" version="2.9.0" />
+		<import addon="script.extendedinfo" version="5.6.1" />
 
+		<import addon="script.module.openscrapers" version="0.0.0.4" optional="true" />
 		<import addon="script.module.lambdascrapers" version="1.0.0" optional="true" />
+		<import addon="script.module.civitasscrapers" version="0.0.2.4" optional="true" />
+		<import addon="script.module.globalscrapers" version="3.3.3" optional="true" />
 		<import addon="script.module.universalscrapers" version="1.0.0" optional="true" />
 		<import addon="script.module.nanscrapers" version="0.5.45" optional="true" />
 		<import addon="script.module.incursion" version="0.1.0" optional="true" />
 		<import addon="script.module.placenta" version="1.2.0" optional="true" />
+		<import addon="script.module.Yoda" version="1.00.045" optional="true" />
 		<import addon="plugin.video.elementum" version="0.0.43" optional="true" />
 		<import addon="plugin.video.quasar" version="0.9.78" optional="true" />
+		<import addon="plugin.video.youtube" version="6.0.0" optional="true" />
 		<import addon="script.trakt" version="3.1.11" optional="true" />
 	</requires>
 
@@ -881,25 +886,33 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
     </extension>
 </addon>
 
-<addon id="plugin.video.ufc-finest" name="Planet MMA" version="3.8" provider-name="DK">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.simplejson" version="3.3.0"/>
-    <import addon="script.module.urlresolver"  version="3.0.32"/>
-    <import addon="script.module.resolveurl" version="5.0.00"/>
-    <import addon="script.module.liveresolver" version="0.1.24"/>
-    <import addon="script.common.plugin.cache" version="2.5.2"/>
-    <import addon="script.module.metahandler" version="2.5.1"/>
-    <import addon="plugin.video.youtube" optional="true" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
+<addon id="plugin.video.ufc-finest" name="Planet MMA" version="4.2" provider-name="DK">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.universalscrapers" version="1.0.0" />
+        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
+        <import addon="script.module.beautifulsoup" version="3.2.1" />
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.addon.common" version="2.0.0" />
+        <import addon="script.module.xmltodict" version="0.9.0" />
+        <import addon="script.module.dateutil" />
+        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
+        <import addon="script.module.resolveurl" />
+        <!--<import addon="script.module.urlresolver" />-->
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Planet MMA</summary>
-    <description lang="en">Planet MMA - All your MMA needs.</description>
-    <platform>all</platform>
-  </extension>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Planet MMA.</summary>
+        <description lang="en">All your MMA needs</description>
+        <disclaimer lang="en">None of the videos are hosted by this site. Streams hosted from sites like Openload and HLS sources available over Internet are embedded here. This Addon is not responsible for the legality of the content. For legal issues, please contact appropriate media file owners/hosters.</disclaimer>
+        <platform>all</platform>
+        <website/>
+        <video_guide>https://</video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
 </addon>
 
 <addon id="plugin.video.uktvplay" name="UKTV Play" version="0.0.7" provider-name="catchup4kodi">
@@ -1073,7 +1086,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
   </extension>
 </addon>
 
-<addon id="plugin.video.yoda" version="1.0.2" name="[COLORgreen]yoda[/COLOR]" provider-name="S">
+<addon id="plugin.video.yoda" version="1.0.3" name="[COLORgreen]yoda[/COLOR]" provider-name="S">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.yoda" />
@@ -1420,7 +1433,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 	</extension>
 </addon>
 
-<addon id="repository.maverickrepo" name="[COLOR lime]MaverickTV Repo[/COLOR]" version="3.5" provider-name="Maverick TV">
+<addon id="repository.maverickrepo" name="[COLOR lime]MaverickTV Repo[/COLOR]" version="3.8" provider-name="Maverick TV">
 <extension point="xbmc.addon.repository" name="[COLOR lime]MaverickTV Repo[/COLOR]">
 	<dir>
 		<info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
@@ -1448,7 +1461,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 		<datadir zip="true">https://raw.githubusercontent.com/Maverick53/repo/master/plugins/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>The MaverickTV Repository v3.5</summary>
+		<summary>The MaverickTV Repository v3.8</summary>
 		<description>The MaverickTV Repository for add-on and dependencies</description>
 		<platform>all</platform>
 	</extension>
@@ -1615,7 +1628,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
   <extension library="lib" point="xbmc.python.module" />
 </addon>
 
-<addon id="script.gaia.artwork" version="3.0.0" name="Gaia Artwork" provider-name="Gaia">
+<addon id="script.gaia.artwork" version="4.0.0" name="Gaia Artwork" provider-name="Gaia">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>
@@ -1663,7 +1676,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 	</extension>
 </addon>
 
-<addon id="script.gaia.resources" version="3.2.5" name="Gaia Resources" provider-name="Gaia">
+<addon id="script.gaia.resources" version="4.1.0" name="Gaia Resources" provider-name="Gaia">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>
@@ -2033,31 +2046,35 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 </addon>
 
 <addon id="script.module.inputstreamhelper"
-       version="0.3.3"
+       version="0.3.4"
        name="InputStream Helper"
        provider-name="emilsvennesson">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-    <import addon="script.module.requests" version="2.9.1"/>
-  </requires>
-  <extension library="lib" point="xbmc.python.module"/>
-  <extension point="xbmc.addon.metadata">
-    <description lang="en_GB">A simple Kodi module that makes life easier for add-on developers relying on InputStream based add-ons and DRM playback.</description>
-    <news>2018.02.21 v0.3.3
-        + Load loop if it's a kernel module (thanks to mkreisl)
-        + Fix legacy Widevine CDM update detection
-        + inputstream_addon is now a public variable
-        + Notify user that ARM64 needs 32-bit userspace
-        + Improve logging
-        + Cosmetics
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="script.module.kodi-six" version="0.0.2"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension library="lib" point="xbmc.python.module"/>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en_GB">A simple Kodi module that makes life easier for add-on developers relying on InputStream based add-ons and DRM playback.</description>
+        <description lang="el_GR">Μία απλή μονάδα για το Kodi η οποία διευκολύνει την ζωή των προγραμματιστών οι οποίοι εξαρτώνται από τα πρόσθετσ InputStream και αναπαραγωγή τύπου DRM.</description>
+        <news>2019.03.23 v0.3.4
+        + python2_3 compability (mediaminister, Rechi)
+        + Option to disable inputstreamhelper in settings.xml
+        + calculate disk space on the tmp folder (dawez)
+        + Support for Unicode paths in Windows (WallyCZ)
+        + Italian translation (pinoelefante)
+        + Dutch translation (dnicolaas)
+        + Greek translation (Twilight0)
+        + Russian translation (vlmaksime)
     </news>
-    <platform>all</platform>
-    <license>MIT License</license>
-    <source>https://github.com/emilsvennesson/script.module.inputstreamhelper</source>
-    <assets>
-      <icon>resources/icon.png</icon>
-    </assets>
-  </extension>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <source>https://github.com/emilsvennesson/script.module.inputstreamhelper</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
 </addon>
 
 <addon id="script.module.jokerHD" name="Joker Sports HD" version="1.0" provider-name="Maverick">
@@ -2208,7 +2225,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
     </extension>
 </addon>
 
-<addon id="script.module.orion" version="1.3.2" name="Orion" provider-name="Orion">
+<addon id="script.module.orion" version="2.1.5" name="Orion" provider-name="Orion">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0"/>
 		<import addon="repository.orion" version="1.0.0" optional="true" />
@@ -2549,7 +2566,7 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
   </extension>
 </addon>
 
-<addon id="script.module.streamlink.crypto" name="streamlink.crypto" version="1.5.0" provider-name="Streamlink.crypto">
+<addon id="script.module.streamlink.crypto" name="Streamlink Crypto" version="1.5.2" provider-name="Twilight0">
   <requires>
     <import addon="xbmc.python" version="2.14.0"/>
   </requires>
@@ -2634,7 +2651,7 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
 	</extension>
 </addon>
 
-<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.1.3" provider-name="Team Universal">
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.1.6" provider-name="Team Universal">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
         <import addon="script.module.beautifulsoup" version="3.2.1"/>
@@ -2748,7 +2765,7 @@ Documentation: https://github.com/tamland/kodi-plugin-routing</description>
     </extension>
 </addon>
 
-<addon id="script.module.yoda" name="[COLORgreen]yoda Module[/COLOR]" version="1.0.7" provider-name="S">
+<addon id="script.module.yoda" name="[COLORgreen]yoda Module[/COLOR]" version="1.1.1" provider-name="S">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 	</requires>
