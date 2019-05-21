@@ -1371,7 +1371,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
 	</extension>
 </addon>
 
-<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.7" provider-name="Obito">
+<addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.8" provider-name="Obito">
     <extension point="xbmc.addon.repository" name="Kamui Repository">
 	<dir>
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml</info>
@@ -1387,7 +1387,7 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
     </dir>
 	<dir minversion="17.9.0">
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/master/addons.xml.md5</checksum>
+        <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/addons.xml.md5</checksum>
         <datadir zip="true">https://github.com/ObitoKodi/kamuirepo/raw/leia/</datadir>
         <hashes>false</hashes>
     </dir>
