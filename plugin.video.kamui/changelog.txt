@@ -1,0 +1,6 @@
+v1.0.7
+    - Rework
+v1.0.5
+    - Lambdascrapers Merge
+v1.0.2
+    - Test

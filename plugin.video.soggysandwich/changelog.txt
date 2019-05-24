@@ -1,0 +1,21 @@
+-----------------------------------
+Soggysandwich v0.6 (19th April 2019)
+-----------------------------------
+- Fixed login code
+-----------------------------------
+Soggysandwich v0.31 (7th October 2017)
+-----------------------------------
+- Fixed playback issue
+-----------------------------------
+Soggysandwich v0.3 (7th October 2017)
+-----------------------------------
+- Updated icons through the adddon
+-----------------------------------
+Soggysandwich v0.2 (5th June 2017)
+-----------------------------------
+- Added icon
+- Added search
+-----------------------------------
+Soggysandwich v0.1 (3rd June 2017)
+-----------------------------------
+- Initial release

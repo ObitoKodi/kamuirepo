@@ -1,0 +1,3 @@
+<settings>
+    <setting id="thumbs" type="bool" label="Force thumbnails (does not work in all skins)" default="true"/>
+</settings>

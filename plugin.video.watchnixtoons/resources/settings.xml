@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="Playback">
+		<setting id="playback_method" type="enum" values="Select Quality Via Dialog|Auto Play Highest Quality|Auto Play Lowest Quality" label="Playback Method" default="0"/>
+	</category>
+</settings>

@@ -1,0 +1,7 @@
+<settings>
+	
+	<category label="AutoPLay">
+		<setting id="auto-play" type="bool" label="Enable Automatic PLay" default="true"/>
+	</category>
+
+</settings>

@@ -1,0 +1,123 @@
+[B]0.0.51[/B]
+- Support for URL from Settings
+[B]0.0.50[/B]
+- fix url
+[B]0.0.49[/B]
+- Fix Episode Listing/Playback
+[B]0.0.48[/B]
+- Fix RapidVideo Playback
+[B]0.0.47[/B]
+- adopt new site structure, fixes listing & playback.
+[B]0.0.46[/B]
+- Login feature update (By SwagOtaku)
+[B]0.0.45[/B]
+- Update URLResolver to 5.0.20 (Fixes MCloud)
+- Fix for RapidVideo playback
+[B]0.0.44[/B]
+- Fixes domain change
+- Fixes RapidVideo Playback
+[B]0.0.43[/B]
+- Fix for Duplicate Episodes (Thanks HackedGameMaker for the help)
+[B]0.0.42[/B]
+- Add Search History (By xakiru)
+[B]0.0.41[/B]
+- Fix Sources (Thanks to RedNinjaX and romxuk)
+[B]0.0.40[/B]
+- BugFix for logic (#277) by SwagOtaku
+- Fix for token by Prometheusx-git
+[B]0.0.39[/B]
+- 9AnimeUrlExtender update (By Prometheusx-git)
+[B]0.0.38[/B]
+- 9Anime Token Update (by ThePyrotechnic)
+[B]0.0.37[/B]
+- Token Update (By Prometheusx-git)
+[B]0.0.36[/B]
+- Bugfix for watchlist paging (By SwagOtaku)
+[B]0.0.35[/B]
+- Add Support for Login & Watchlist (By SwagOtaku)
+[B]0.0.34[/B]
+- Bugfix for Generes by SwagOtaku
+[B]0.0.33[/B]
+- add support for resolution in Streamango
+[B]0.0.32[/B]
+- Replaces old G4 source with new Streamango
+[B]0.0.31[/B]
+- Adds support for Plot by SwagOtaku
+- Update url resolver to 5.0.14
+[B]0.0.30[/B]
+- Bugfix for titles by SwagOtako
+[B]0.0.29[/B]
+- Fixed RapidVideo and MyCloud players
+[B]0.0.28[/B]
+- Hotfix for 9Anime Grabber
+- Fix MyCloud source listing
+- Fix for title above keyboard (Thanks SwagOtaku)
+[B]0.0.27[/B]
+- Fixes for new website design
+[B]0.0.26[/B]
+- Align servers with website
+[B]0.0.25[/B]
+- Fixes F2 Source
+- Change base domain to 9anime.is
+[B]0.0.24[/B]
+- Another fix for grabber
+[B]0.0.23[/B]
+- Fix for the new TS Encoding
+- Fix for the new Param encoding
+- Prevent crash if _get_anime_info returns empty list
+[B]0.0.22[/B]
+- Add G3 Server
+[B]0.0.21[/B]
+- Bugfix: treat string table as utf-8
+[B]0.0.20[/B]
+- Fixed Typo
+- Add G1/G2 Sources
+- Bugfix for MyCloud source
+[B]0.0.19[/B]
+- Bugfix for RapidVideo
+[B]0.0.18[/B]
+- Remove legacy token decoder
+[B]0.0.17[/B]
+- Enhanced Resolution Sorting Alogirthem
+- Add option for resolution selection as Directory view instead of classic one.
+- Add Server Filtering Settings
+- Add Settings button to menu.
+- Bugfix for generes list
+[B]0.0.16[/B]
+- Proper fix for token change
+[B]0.0.15[/B]
+- Hotfix for 9anime token change
+[B]0.0.14[/B]
+- Change domain back to 9anime.to
+[B]0.0.13[/B]
+- Add support for RapidVideo sources
+[B]0.0.12[/B]
+- add support for autoplay
+= add support for server selection ahead
+- add support for reversing episodes order
+- add support for sortung sources by quality
+- add support for Wall view type
+[B]0.0.11[/B]
+- Add most popluar subbed & dubbed sections
+[B]0.0.10[/B]
+- Add recent Subbed & Dubbed support
+[B]0.0.9[/B]
+- Fix for new token in url mechanizem (Thanks hoppler)
+[B]0.0.8[/B]
+- add support for MyCloud provider
+[B]0.0.7[/B]
+- Require Kodi 17+
+- fix for anime list inside a genre (#10)
+- Various bug fixes as 9anime changes
+- use URLResolver for openload sources
+
+[B]0.0.2[/B]
+- fix for domain issues
+- update OpenLoad algorithem
+
+[B]0.0.1[/B]
+- Add support for the new Mp4Upload source.
+- Minor bug fixes
+
+[B]0.0.1-rc.0[/B]
+- Initial release
