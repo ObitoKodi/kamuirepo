@@ -28,16 +28,6 @@
         <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/</datadir>
     </dir>
-	<dir>
-	    <info compressed="false">http://supremacy.org.uk/zip/plugin/addon.xml</info>
-		<checksum>http://supremacy.org.uk/zip/plugin/addons.xml.md5</checksum>
-		<datadir zip="true">http://supremacy.org.uk/zip/plugin/</datadir>
-	</dir>
-	<dir>
-	    <info compressed="false">https://raw.githubusercontent.com/DxCx/repo.plugin.video.9anime/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/DxCx/repo.plugin.video.9anime/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/DxCx/repo.plugin.video.9anime/master</datadir>
-	</dir>	
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>http://kamuiwizard.ga/ This is Hell</summary>
