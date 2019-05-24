@@ -1353,11 +1353,13 @@ Custom Provider module now uses Zfile module to accomodate zipfile module bug on
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/krypton/zips/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/krypton/zips/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/bitoKodi/kamuirepo/zips/krypton/zips/</datadir>
+		<hashes>false</hashes>
     </dir>
 	<dir minversion="17.9.0">
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/zips/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/zips/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/zips/</datadir>
+		<hashes>false</hashes>
     </dir>
     <dir>
 		<info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>

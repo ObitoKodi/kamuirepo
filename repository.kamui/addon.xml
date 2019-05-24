@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.11" provider-name="Obito">
     <extension point="xbmc.addon.repository" name="Kamui Repository">
 	<dir>
@@ -10,11 +10,13 @@
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/krypton/zips/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/krypton/zips/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/bitoKodi/kamuirepo/zips/krypton/zips/</datadir>
+		<hashes>false</hashes>
     </dir>
 	<dir minversion="17.9.0">
         <info compressed="false">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/zips/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/zips/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/ObitoKodi/kamuirepo/leia/zips/</datadir>
+		<hashes>false</hashes>
     </dir>
     <dir>
 		<info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
