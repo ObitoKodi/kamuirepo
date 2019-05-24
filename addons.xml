@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
 <addon id="repository.kamui" name="[COLOR red]Kamui[/COLOR][COLOR white] Repo[/COLOR]" version="1.0.11" provider-name="Obito">
     <extension point="xbmc.addon.repository" name="Kamui Repository">
 	<dir>
@@ -35,3 +36,4 @@
         <platform>all</platform>
     </extension>
 </addon>
+</addons>
